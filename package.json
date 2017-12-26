@@ -20,6 +20,7 @@
   "homepage": "https://github.com/jmisiti42/hellomarcel-landing#readme",
   "dependencies": {
     "express": "^4.16.2",
+    "path": "^0.12.7",
     "serve-favicon": "^2.4.5"
   },
   "devDependencies": {

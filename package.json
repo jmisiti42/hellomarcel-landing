@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/jmisiti42/hellomarcel-landing#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "serve-favicon": "^2.4.5"
   },
   "devDependencies": {
     "pm2": "^2.9.1"

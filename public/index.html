@@ -2,9 +2,28 @@
 <html>
   <head>
 	  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"/>
+	  <script>
+	    window.fbAsyncInit = function() {
+	      FB.init({
+	        appId            : '640350796107376',
+	        autoLogAppEvents : true,
+	        xfbml            : true,
+	        version          : 'v2.11'
+	      });
+	    };
+
+	    (function(d, s, id){
+	       var js, fjs = d.getElementsByTagName(s)[0];
+	       if (d.getElementById(id)) {return;}
+	       js = d.createElement(s); js.id = id;
+	       js.src = "https://connect.facebook.net/fr_FR/sdk.js";
+	       fjs.parentNode.insertBefore(js, fjs);
+	     }(document, 'script', 'facebook-jssdk'));
+	  </script>
     <title>Erm hey.</title>
   </head>
   <body>
-    <img src="https://media.giphy.com/media/3o6Zt7aSSZLX6U5WtW/source.gif">
+	<div class="fb-customerchat" page_id="1884786881751064" minimized="true"></div>
+	<img src="https://media.giphy.com/media/3o6Zt7aSSZLX6U5WtW/source.gif">
   </body>
 </html>

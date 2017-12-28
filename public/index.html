@@ -4,13 +4,14 @@
 	  <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"/>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	  <link rel="stylesheet" href="./css/style.css">
+	  <link rel="stylesheet" href="./css/fontawesome/web-fonts-with-css/css/fontawesome.min.css">
 	  <!-- Script customer chat à laisser en haut du fichier ! -->
 	  <script src="./javascript/customerChat.js"></script>
     <title>hellomarcel</title>
   </head>
 	<body>
 		<!-- div customer chat -->
-		<div class="fb-customerchat" page_id="1884786881751064" minimized="false"></div>
+		<div class="fb-customerchat" page_id="1884786881751064" style="width: 50%;" minimized="false"></div>
 		<div class="container-fluid" style="width:100%; position: fixed; background-color: rgba(0, 0, 0, 0.4); z-index: 999;">
 			<div class="navbar navbar-default">
 				<div class="container-fluid">
@@ -19,29 +20,149 @@
 							<img class="title" src="./images/title.png"></img>
 						</div>
 						<div style="margin-top: 3vw;" class="text-center col-xs-12 col-md-8">
-							<a style="padding-right: 30px;" class="green" href="#">Home</a>
-							<a style="padding-right: 30px;" class="" href="#">Qui est Marcel ?</a>
-							<a style="padding-right: 30px;" class="" href="#">Témoignages</a>
+							<a style="padding-right: 30px;" class="green" onclick="scrollTo('home');" href="#">Home</a>
+							<a style="padding-right: 30px;" class="" onclick="scrollTo('whois');" >Qui est Marcel ?</a>
+							<a style="padding-right: 30px;" class="" onclick="scrollTo('t');" href="#">Témoignages</a>
 							<a class="padding: 0;" href="#">Newsletter</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="part"></div>
-		<div class="part whitebg container-fluid">
+		<div id="#home" class="part"></div>
+		<div id="#whois" class="whitebg container-fluid">
 			<div class="row">
-				<div class="col-xs-8">
-					<img style="width: 295px; height: 427px; object-fit: cover; margin-top: -450px;" src="./images/chat_preview.png"></img>
+				<div class="col-xs-6 text-center">
+					<img style="height: 427px; object-fit: cover; margin-top: -450px;" src="./images/chat_preview.png"></img>
 				</div>
-				<div class="col-xs-2">
-					<img style="width: 122px; height: 150px; object-fit: cover; margin-top: -111px;" src="./images/hm.png"></img>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-1">
+					<img style="height: 150px; object-fit: cover; margin-top: -111px;" src="./images/hm.png"></img>
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-md-2"></div>
+				<div class="col-md-1">
+					<img style="width: 190px; height: 102px; object-fit: cover;" src="./images/laureatPxPub.png"></img>
+				</div>
+				<div class="col-md-6">
+					<h1 class="green">Hello Marcel</h1>
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<h2><b>Le 1er chatbot qui souffle à l'oreille des parents !</b></h2>
+					<span>Parce qu'être parent n'est pas toujours simple, parce qu'on manque de temps, d'idées, parce qu'on a besoin<br>d'échanges et de réponses, nous avons imaginé Hello Marcel.<br>Hello Marcel est le 1er agent conversationnel qui facilite la vie des parents en répondant à leurs<br>
+					questions et tâches du quotidien via Facebook Messenger.</span>
+				</div>
+			</div>
+			<br>
+			<br>
+			<div class="row text-center">
+				<div class="col-md-4">
+					<i style="font-size: 5vw;" class="green fa fa-gift" aria-hidden="true"></i>
+					<h4>Idées cadeaux / Equipements</h4>
+					<span>Pour trouver le cadeau qui fera mouche ou les dernières innovations en matière de jeux, jouets ou équipement, interrogez Hello Marcel, vous ne serez pas déçu !</span>
+				</div>
+				<div class="borders col-md-4">
+					<i style="font-size: 5vw;" class="green fa fa-comment" aria-hidden="true"></i>
+					<h4>Conseil en parentalité</h4>
+					<span>S'occuper de ses enfants, les comprendre, les guider, les divertir est un challenge de tous les jours !
+Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposant des outils, des contenus et un suivi personnalisé.</span>
+				</div>
+				<div class="col-md-4">
+					<i style="font-size: 5vw;" class="green fa fa-rocket" aria-hidden="true"></i>
+					<h4>Activités</h4>
+					<span>Ciné, spectacles, ballades, visites, restos... vous cherchez la bonne idée pour passer un bon moment en famille ?
+Hello Marcel déniche les meilleurs plans du moment !</span>
 				</div>
 			</div>
 		</div>
+		<div class="whitebg container-fluid">
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="greybg col-md-8">
+					<div class="row">
+						<div class="col-xs-4">
+							<img src="./images/hm_glasses.png" style="width: 141px; height: 128px; object-fit: cover;"></img>
+						</div>
+						<div class="col-xs-8">
+							<h6>Recevez notre newsletter !</h6><br>
+							<div class="row">
+								<div class="col-xs-9 col-md-6">
+									<input type="email" name="mail" class="form-control" placeholder="Addresse Email"/>
+								</div>
+								<div class="col-xs-9 col-md-6">
+									<button type="submit" class="btn btn-green">S'abonner maintenant</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="padding-top: 30px;" class="whitebg container-fluid">
+			<div class="row">
+				<div class="col-md-6 emptyIphone text-center">
+					<img style="width: 272px; height: 546px; object-fit: cover;" src="./images/empty_iphone.png"></img>
+				</div>
+				<div class="col-md-6 redbg text-center">
+					<h1 class="white h1white">Hello Marcel<br>Nouvelle Version</h1>
+					<h2 class="white h2white">Le 1er chatbot de recommandation d'idées de sorties, de cadeaux et restos kids friendly sur Facebook Messenger</h2>
+					<span class="white">"Qu'est-ce qu'on fait ce week-end ?" "Quel cadeau lui offrir ?" "Un petit brunch dimanche ? "...</span>
+					<br><br>
+					<span class="white">Ne cherchez plus, Hello Marcel le fait pour vous ! Il vous propose via une petite conversation une sélection personnalisée de bons plans qui répondra à vos envies ! </span>
+					<br><br>
+					<span class="white">Pour discuter avec Hello Marcel, c'est sur Facebook Messenger. </span>
+					<br><br>
+					<a class="whitebg btn buttongo">J'Y VAIS !</a>
+				</div>
+			</div>
+		</div>
+		<div class="whitebg container-fluid">
+			<div class="row text-center">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<h1 class="green">Ils l'ont testé !</h1>
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<h2><b>Les premiers utilisateurs de Hello Marcel témoignent...</b></h2>
+				</div>
+			</div>
+			<br>
+			<div class="row text-center">
+				<div class="col-md-3"></div>
+				<div class="avis greybg col-md-2">
+					<i style="font-size: 5vw;" class="fa fa-quote-left" aria-hidden="true"></i><br>
+					<span class="text-center">“Je recherchais un cadeau original et pas trop cher pour la maîtresse de ma fille, Hello Marcel m'a fait une petite sélection très sympa ! Et hop, en un clic, c'était réglé !"</span><br>
+					<i style="font-size: 5vw; color: yellow;" class="fa fa-star" aria-hidden="true"></i><br>
+				</div>
+				<div class="avis greybg col-md-2">
+					<i style="font-size: 5vw;" class="fa fa-quote-left" aria-hidden="true"></i><br>
+					<span>“Vendredi soir, rentrés du boulot, nous n'avions aucune idée d'activités pour ce week-end ! Une petite conversation avec Hello Marcel, et hop, nous avions notre programme ! "</span>
+				</div>
+				<div class="avis greybg col-md-2">
+					<i style="font-size: 5vw;" class="fa fa-quote-left" aria-hidden="true"></i><br>
+					<span>“Service super efficace, à chaque fois que j'ai fait appel à lui, Hello Marcel m'a apporté des réponses parfaitement adaptées à mon besoin, et rassurant de l'avoir toujours sous la main ! ”</span>
+				</div>
+			</div>
+		</div>
+		<div class="whitebg part container-fluid">
+
 		<!-- Scripts JS -->
 		<script src="https://use.fontawesome.com/ffb5c24dc5.js"></script>
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script>
+			$(function() {
+				function scrollTo(id) {
+					$('#' + id).ScrollTo();
+				};
+			});
+		</script>
 	</body>
 </html>

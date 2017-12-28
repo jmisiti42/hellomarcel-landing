@@ -3,6 +3,60 @@
     src: url('./Brandon_reg.otf');
 }
 
+@font-face {
+	font-family: avenirl;
+	src: url('./Avenir_Light.otf');
+}
+
+@font-face {
+	font-family: avenirh;
+	src: url('./AvenirLTStd-Heavy.woff');
+}
+
+html {
+	font-family: brandon !important;
+}
+
+h1 {
+	font-size:48px;
+	font-family: brandon;
+}
+
+h2 {
+	font-size:22px;
+	font-family: avenirh;
+}
+
+h6 {
+	font-size:18px;
+	font-family: avenirh;
+}
+
+.btn-green {
+	background-color: #45DD90;
+	color: white;
+	font-family: brandon;
+	border-radius: 0;
+	font-size: 18px;
+	width: 100%;
+}
+
+input {
+	font-family: brandon;
+}
+
+.form-control {
+	border-radius: 0;
+	font-size: 18px;
+	height: 40px;
+}
+
+span {
+	color: #605e5e;
+	font-size: 16px;
+	font-family: avenirl;
+}
+
 .navbar {
 	background-color: rgba(0, 0, 0, 0);
 	border: 0;
@@ -21,6 +75,13 @@ a:visited {
     text-decoration: none;
 }
 
+.borders {
+	border-right: 1px solid rgba(0, 0, 0, 0.2);
+	border-left: 1px solid rgba(0, 0, 0, 0.2);
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
 a:hover {
 	color: #45DD90 !important;
 }
@@ -30,7 +91,7 @@ a:active {
 }
 
 .part {
-	height: 550px;
+	height: 580px;
 }
 
 .title {
@@ -41,17 +102,71 @@ a:active {
 	margin-left: 10%;
 }
 
+.fa-quote-left {
+	color: white;
+}
+
 .whitebg {
 	background-color: white;
 }
 
+.greybg {
+	margin-top: 40px;
+	background-color: rgba(96,94,94,0.1);
+}
+
+.avis {
+	margin-right: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+    border-bottom-left-radius: 55px;
+}
+
+.redbg {
+	background-color: #F2496A;
+	padding-bottom: 100px;
+	min-height: 546px;
+}
+
+.buttongo {
+	font-family: avenirl;
+	border-radius: 30px;
+	width: 123px;
+	height: 46px;
+	margin: auto;
+	color: black !important;
+	padding-top: 12px;
+}
+
+.buttongo:hover {
+	color: white !important;
+	background-color: lightgrey;
+}
+
+.emptyIphone {
+	margin-bottom: 40px;
+}
+
 .nav {
 	font-size: 18px !important;
-	font-family: brandon,Arial,Helvetica,sans-serif;
 }
 
 .green {
 	color: #45DD90 !important;
+}
+
+.white {
+	color: white;
+}
+
+.h2white {
+	font-family: avenirh;
+	font-size: 22px;
+}
+
+.h1white {
+	font-family: avenirl;
+	font-size: 36px;
 }
 
 body {

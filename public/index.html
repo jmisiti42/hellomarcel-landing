@@ -2,18 +2,41 @@
 <html>
   <head>
 	  <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"/>
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	  <link rel="stylesheet" href="./css/style.css">
 	  <!-- Script customer chat à laisser en haut du fichier ! -->
 	  <script src="./javascript/customerChat.js"></script>
     <title>hellomarcel</title>
   </head>
-  <body>
-	<div class="fb-customerchat" page_id="1884786881751064" minimized="false"></div>
-	<img src="https://media.giphy.com/media/3o6Zt7aSSZLX6U5WtW/source.gif">
-
-	<!-- Scripts JS -->
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  </body>
+	<body>
+		<!-- div customer chat -->
+		<div class="fb-customerchat" page_id="1884786881751064" minimized="false"></div>
+		<div class="container-fluid" style="width:100%; position: fixed; background-color: rgba(0, 0, 0, 0.4); z-index: 999;">
+			<div class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 col-md-4">
+							<img class="title" src="./images/title.png"></img>
+						</div>
+						<div class="col-xs-12 col-md-8">
+							<a style="padding-right: 30px;" class="green" href="#">Home</a>
+							<a style="padding-right: 30px;" class="" href="#">Qui est Marcel ?</a>
+							<a style="padding-right: 30px;" class="" href="#">Témoignages</a>
+							<a class="padding: 0;" href="#">Newsletter</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="part"></div>
+		<div class="part whitebg container-fluid">
+			<img class="hidden-sm hidden-xl hidden-md hidden-lg" style="text-align: center; width: 295px; height: 427px; object-fit: cover; display: block; margin-top: -427px; margin-left: 50%; margin-right: 50%; transform: translate(-50%); position: absolute;" src="./images/chat_preview.png"></img>
+			<img class="hidden-xs" style="width: 295px; height: 427px; object-fit: cover; margin-top: -465px; margin-left: 10%;" src="./images/chat_preview.png"></img>
+			<img class="hidden-xs" style="width: 122px; height: 150px; object-fit: cover; margin-top: -111px; margin-left: 30%;" src="./images/hm.png"></img>
+		</div>
+		<!-- Scripts JS -->
+		<script src="https://use.fontawesome.com/ffb5c24dc5.js"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</body>
 </html>

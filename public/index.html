@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+	  <meta name="viewport" content="width=device-width" />
 	  <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"/>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	  <link rel="stylesheet" href="./css/style.css">
 	  <link rel="stylesheet" href="./css/fontawesome/web-fonts-with-css/css/fontawesome.min.css">
 	  <!-- Script customer chat à laisser en haut du fichier ! -->
 	  <script src="./javascript/customerChat.js"></script>
-    <title>hellomarcel</title>
+	  <title>hellomarcel</title>
   </head>
 	<body>
 		<!-- div customer chat -->
 		<div class="fb-customerchat" page_id="1884786881751064" style="width: 50%;" minimized="false"></div>
-		<div class="container-fluid" style="width:100%; position: fixed; background-color: rgba(0, 0, 0, 0.4); z-index: 999;">
+		<div id="header" class="container-fluid" style="width:100%; position: fixed; background-color: rgba(0, 0, 0, 0.4); z-index: 999;">
 			<div class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="row">
@@ -20,23 +21,23 @@
 							<img class="title" src="./images/title.png"></img>
 						</div>
 						<div style="margin-top: 3vw;" class="text-center col-xs-12 col-md-8">
-							<a style="padding-right: 30px;" class="green" onclick="scrollTo('home');" href="#">Home</a>
-							<a style="padding-right: 30px;" class="" onclick="scrollTo('whois');" >Qui est Marcel ?</a>
-							<a style="padding-right: 30px;" class="" onclick="scrollTo('t');" href="#">Témoignages</a>
-							<a class="padding: 0;" href="#">Newsletter</a>
+							<a style="padding-right: 30px;" class="navlink green" href="#home">Home</a>
+							<a style="padding-right: 30px;" class="navlink" href="#whois" >Qui est Marcel ?</a>
+							<a style="padding-right: 30px;" class="navlink" href="#temoignage">Témoignages</a>
+							<a class="navlink" href="#newsletter">Newsletter</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="#home" class="part"></div>
-		<div id="#whois" class="whitebg container-fluid">
+		<div id="home" class="part"></div>
+		<div id="whois" class="whitebg container-fluid">
 			<div class="row">
-				<div class="col-xs-6 text-center">
-					<img style="height: 427px; object-fit: cover; margin-top: -450px;" src="./images/chat_preview.png"></img>
+				<div class="col-md-6 text-center">
+					<img style="padding-left: 15px; height: 427px; object-fit: cover; margin-top: -450px;" src="./images/chat_preview.png"></img>
 				</div>
 				<div class="col-xs-1"></div>
-				<div class="col-xs-1">
+				<div class="hidden-sm hidden-xs col-md-1">
 					<img style="height: 150px; object-fit: cover; margin-top: -111px;" src="./images/hm.png"></img>
 				</div>
 			</div>
@@ -120,7 +121,7 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 				</div>
 			</div>
 		</div>
-		<div class="whitebg container-fluid">
+		<div id="temoignage" style="padding-bottom: 30px;" class="whitebg container-fluid">
 			<div class="row text-center">
 				<div class="col-md-3"></div>
 				<div class="col-md-6">
@@ -133,36 +134,96 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 					<h2><b>Les premiers utilisateurs de Hello Marcel témoignent...</b></h2>
 				</div>
 			</div>
-			<br>
-			<div class="row text-center">
-				<div class="col-md-3"></div>
-				<div class="avis greybg col-md-2">
-					<i style="font-size: 5vw;" class="fa fa-quote-left" aria-hidden="true"></i><br>
-					<span class="text-center">“Je recherchais un cadeau original et pas trop cher pour la maîtresse de ma fille, Hello Marcel m'a fait une petite sélection très sympa ! Et hop, en un clic, c'était réglé !"</span><br>
-					<i style="font-size: 5vw; color: yellow;" class="fa fa-star" aria-hidden="true"></i><br>
+			<div class="row-table row text-center">
+				<div style="margin-left: 5%; height: 0px;" class="col-md-1"></div>
+				<div class="collumn col-md-3">
+					<div class="avis greybg">
+						<i style="font-size: 5vw;" class="fa fa-quote-left" aria-hidden="true"></i><br>
+						<span class="text-center">“Je recherchais un cadeau original et pas trop cher pour la maîtresse de ma fille, Hello Marcel m'a fait une petite sélection très sympa ! Et hop, en un clic, c'était réglé !"</span><br>
+					</div>
+					<div><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><br><span class="temoignagespan">Aurore, maman de Clara 7 ans</span></div>
 				</div>
-				<div class="avis greybg col-md-2">
-					<i style="font-size: 5vw;" class="fa fa-quote-left" aria-hidden="true"></i><br>
-					<span>“Vendredi soir, rentrés du boulot, nous n'avions aucune idée d'activités pour ce week-end ! Une petite conversation avec Hello Marcel, et hop, nous avions notre programme ! "</span>
+
+				<div class="collumn col-md-3">
+					<div class="avis greybg">
+						<i style="font-size: 5vw;" class="fa fa-quote-left" aria-hidden="true"></i><br>
+						<span>“Vendredi soir, rentrés du boulot, nous n'avions aucune idée d'activités pour ce week-end ! Une petite conversation avec Hello Marcel, et hop, nous avions notre programme ! "</span>
+					</div>
+					<div><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><br><span class="temoignagespan">Nicolas, papa de Basile et<br>Chloé, 3 et 5 ans</span></div>
 				</div>
-				<div class="avis greybg col-md-2">
-					<i style="font-size: 5vw;" class="fa fa-quote-left" aria-hidden="true"></i><br>
-					<span>“Service super efficace, à chaque fois que j'ai fait appel à lui, Hello Marcel m'a apporté des réponses parfaitement adaptées à mon besoin, et rassurant de l'avoir toujours sous la main ! ”</span>
+				<div class="collumn col-md-3">
+					<div class="avis greybg">
+						<i style="font-size: 5vw;" class="fa fa-quote-left" aria-hidden="true"></i><br>
+						<span>“Service super efficace, à chaque fois que j'ai fait appel à lui, Hello Marcel m'a apporté des réponses parfaitement adaptées à mon besoin, et rassurant de l'avoir toujours sous la main ! ”</span>
+					</div>
+					<div><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><br><span class="temoignagespan">Maxime, papa de Tom 3 ans</span></div>
 				</div>
 			</div>
 		</div>
-		<div class="whitebg part container-fluid">
+		<div class="cgu container-fluid text-center">
+			<h2>CGU (cliquez ici): <a target="_blank" href="./cgu.pdf"><img style="width: 50px;" src="./images/pdf_icon.png"/></a></h2>
+		</div>
+		<div id="newsletter" class="greenbg container-fluid">
+			<div class"row text-xs-center">
+				<div class="col-md-1"></div>
+				<div class="col-md-4">
+					<h4 class="text-xs-center" style="font-familly: brandon; color: white;">Recevez notre newsletter !</h4><br>
+					<div class="row">
+						<div class="col-xs-10 col-md-6">
+							<input type="email" name="mail" class="form-control inputfooter" placeholder="Addresse Email"/>
+						</div>
+						<div class="col-xs-2 col-md-6">
+							<button type="submit" class="btn btn-white">GO</button>
+						</div>
+					</div>
+				</div>
+				<br class="disabled-xs">
+				<div class="disabled-xs col-xs-4"></div>
+				<div class="col-xs-4 col-md-3 text-xs-center">
+					<img src="./images/hm_black.png" style="width: 135px; height: 92px; object-fit: cover;"/>
+				</div>
+				<br class="disabled-xs">
+				<br class="disabled-xs">
+				<br class="disabled-xs">
+				<br class="disabled-xs">
+				<div class="col-md-4" style="text-align: center;"><br>
+					<h4 style="font-familly: brandon;"><a class="footerlink" style="color: white;" target="_blank" href="https://www.facebook.com/hellohellomarcel/">Retrouver nous sur Facebook ! <img style="width: 28px; height: 29px; object-fit: cover;" src="./images/facebook_logo.png"/></a></h4><br><br>
+					<span style="font-size: 13px; color: #309964;">&nbsp;&nbsp;&nbsp;<a class="footerlink2" href="mailto:contact@hellomarcel.fr">contact@hellomarcel.fr</a>&nbsp; &nbsp; &nbsp; &nbsp;© Wings 2017</span>
+				</div>
+			</div>
+			<br><br>
+			<br><br>
+			<br>
+			<br><br>
+		</div>
 
 		<!-- Scripts JS -->
 		<script src="https://use.fontawesome.com/ffb5c24dc5.js"></script>
-		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script>
 			$(function() {
-				function scrollTo(id) {
-					$('#' + id).ScrollTo();
-				};
+				$('a[href*="#"]')
+				  // Remove links that don't actually link to anything
+				  .not('[href="#0"]')
+				  .not('[href="#"]')
+				  .click(function(event) {
+				    // On-page links
+				    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+				      // Figure out element to scroll to
+					  event.preventDefault();
+				      var target = $(this.hash);
+				      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+				      // Does a scroll target exist?
+				      if (target.length) {
+				        $('html, body').animate({
+				          scrollTop: target.offset().top - $('#header').height()
+				        }, 1000, function() { });
+						return false;
+				      }
+				    }
+				  });
 			});
-		</script>
+		</script> <!-- Script de page -->
 	</body>
 </html>

@@ -59,7 +59,7 @@ strong {
 }
 
 @media (max-width: 405px) {
-	.iframevd iframe { margin-left: 17%; }
+	.iframevd iframe { margin-left: 10%; }
 
 	.btn-green { font-size: 14px; }
 }

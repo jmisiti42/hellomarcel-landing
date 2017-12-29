@@ -13,24 +13,20 @@
 	src: url('./AvenirLTStd-Heavy.woff');
 }
 
-@media (max-width: 990px) {
-  .text-xs-center {
-    text-align: center;
-  }
-}
-
-@media (min-width: 990px) {
-	.disabled-xs  {
-  	  display: none;
-    }
+.btn-green {
+	background-color: #45DD90;
+	color: white;
+	font-family: brandon;
+	border-radius: 0;
+	font-size: 18px;
+	width: 100%;
 }
 
 .iframevd {
-    padding-top: 25px;
-    padding-bottom: 67.5%;
-	width: 0;
-	height: 0;
 	position: relative;
+	width: 272px;
+	height: 546px;
+	margin-bottom: 30px;
 }
 
 .iframevd iframe {
@@ -39,12 +35,33 @@
     background-size: contain;
 	padding-top: 50px;
 	padding-bottom: 60px;
-    padding-right: 5px;
     position: absolute;
-    top: 0;
-    left: 0;
 	width: 272px;
 	height: 546px;
+}
+
+.fa-whois {
+	font-size: 5vw !important;
+}
+
+strong {
+	font-weight: normal;
+}
+
+@media (max-width: 990px) {
+	.text-xs-center { text-align: center; }
+
+	.fa-whois { font-size: 9vw !important; }
+}
+
+@media (min-width: 990px) {
+	.disabled-xs  { display: none; }
+}
+
+@media (max-width: 405px) {
+	.iframevd iframe { margin-left: 17%; }
+
+	.btn-green { font-size: 14px; }
 }
 
 h1 {
@@ -66,15 +83,6 @@ h2 {
 
 .fa-star-o {
 	color: rgba(160, 160, 159, 1);
-}
-
-.btn-green {
-	background-color: #45DD90;
-	color: white;
-	font-family: brandon;
-	border-radius: 0;
-	font-size: 18px;
-	width: 100%;
 }
 
 .btn-white {

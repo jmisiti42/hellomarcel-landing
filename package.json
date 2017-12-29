@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hello Marcel, le chatbot des parents pour les enfants",
   "main": "index.js",
   "scripts": {
     "restart": "pm2 startOrRestart ecosystem.config.js",
@@ -19,8 +19,11 @@
   },
   "homepage": "https://github.com/jmisiti42/hellomarcel-landing#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "request": "^2.83.0",
+    "superagent": "^3.8.2"
   },
   "devDependencies": {
     "pm2": "^2.9.1"

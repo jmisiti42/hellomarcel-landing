@@ -8,7 +8,9 @@
 	  <link rel="stylesheet" href="./css/fontawesome/web-fonts-with-css/css/fontawesome.min.css">
 	  <!-- Script customer chat à laisser en haut du fichier ! -->
 	  <script src="./javascript/customerChat.js"></script>
-	  <title>hellomarcel</title>
+	  <meta name="description" content="Marcel est un assistant personnel connecté qui facilite la vie des parents en répondant à leurs questions et tâches du quotidien, via Messenger" />
+	  <meta name="keywords" content="Hello, Marcel, hello marcel, hellomarcel, HM, chatbot, chat bot, enfant, aide, activités, robot, bot, assistant" />
+	  <title>Hello Marcel</title>
   </head>
 	<body>
 		<!-- div customer chat -->
@@ -18,7 +20,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="text-center col-xs-12 col-md-4">
-							<img class="title" src="./images/title.png"></img>
+							<img alt="Title" class="title" src="./images/title.png"/>
 						</div>
 						<div style="margin-top: 3vw;" class="text-center col-xs-12 col-md-8">
 							<a style="padding-right: 30px;" class="navlink" href="#home">Home</a>
@@ -35,26 +37,26 @@
 		<div id="whois" class="whitebg container-fluid">
 			<div class="row">
 				<div class="col-md-6 text-center">
-					<img style="padding-left: 15px; height: 427px; object-fit: cover; margin-top: -450px;" src="./images/chat_preview.png"></img>
+					<img alt="chat preview" style="padding-left: 15px; height: 427px; object-fit: cover; margin-top: -450px;" src="./images/chat_preview.png"/>
 				</div>
 				<div class="col-xs-1"></div>
 				<div class="hidden-sm hidden-xs col-md-1">
-					<img style="height: 150px; object-fit: cover; margin-top: -111px;" src="./images/hm.png"></img>
+					<img alt="hellomarcel" style="height: 150px; object-fit: cover; margin-top: -111px;" src="./images/hm.png"/>
 				</div>
 			</div>
 			<div class="row text-center">
 				<div class="col-md-2"></div>
 				<div class="col-md-1">
-					<img style="width: 190px; height: 102px; object-fit: cover;" src="./images/laureatPxPub.png"></img>
+					<img alt="laureat px pub" style="width: 190px; height: 102px; object-fit: cover;" src="./images/laureatPxPub.png"/>
 				</div>
 				<div class="col-md-6">
-					<h1 class="green">Hello Marcel</h1>
+					<h1 class="green"><strong>Hello Marcel</strong></h1>
 				</div>
 			</div>
 			<div class="row text-center">
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
-					<h2><b>Le 1er chatbot qui souffle à l'oreille des parents !</b></h2>
+					<h2><strong>Le 1er chatbot qui souffle à l'oreille des parents !</strong></h2>
 					<span>Parce qu'être parent n'est pas toujours simple, parce qu'on manque de temps, d'idées, parce qu'on a besoin<br>d'échanges et de réponses, nous avons imaginé Hello Marcel.<br>Hello Marcel est le 1er agent conversationnel qui facilite la vie des parents en répondant à leurs<br>
 					questions et tâches du quotidien via Facebook Messenger.</span>
 				</div>
@@ -63,18 +65,18 @@
 			<br>
 			<div class="row text-center">
 				<div class="col-md-4">
-					<i style="font-size: 5vw;" class="green fa fa-gift" aria-hidden="true"></i>
+					<i class="fa-whois green fa fa-gift" aria-hidden="true"></i>
 					<h4>Idées cadeaux / Equipements</h4>
 					<span>Pour trouver le cadeau qui fera mouche ou les dernières innovations en matière de jeux, jouets ou équipement, interrogez Hello Marcel, vous ne serez pas déçu !</span>
 				</div>
 				<div class="borders col-md-4">
-					<i style="font-size: 5vw;" class="green fa fa-comment" aria-hidden="true"></i>
+					<i class="fa-whois green fa fa-comment" aria-hidden="true"></i>
 					<h4>Conseil en parentalité</h4>
 					<span>S'occuper de ses enfants, les comprendre, les guider, les divertir est un challenge de tous les jours !
 Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposant des outils, des contenus et un suivi personnalisé.</span>
 				</div>
 				<div class="col-md-4">
-					<i style="font-size: 5vw;" class="green fa fa-rocket" aria-hidden="true"></i>
+					<i class="fa-whois green fa fa-rocket" aria-hidden="true"></i>
 					<h4>Activités</h4>
 					<span>Ciné, spectacles, ballades, visites, restos... vous cherchez la bonne idée pour passer un bon moment en famille ?
 Hello Marcel déniche les meilleurs plans du moment !</span>
@@ -87,13 +89,14 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 				<div class="greybg col-md-8">
 					<div class="row">
 						<div class="col-xs-4">
-							<img src="./images/hm_glasses.png" style="width: 141px; height: 128px; object-fit: cover;"></img>
+							<img alt="hellomarcel with glasses" src="./images/hm_glasses.png" style="width: 141px; height: 128px; object-fit: cover;"/>
 						</div>
 						<div class="col-xs-8">
 							<h6>Recevez notre newsletter !</h6><br>
 							<div class="row">
 								<div class="col-xs-9 col-md-6">
-									<input type="email" name="mail" class="form-control" placeholder="Addresse Email"/>
+									<input type="email" name="email" class="form-control" placeholder="Addresse Email"/>
+									<input hidden type="text" name="part" value="middle"/>
 								</div>
 								<div class="col-xs-9 col-md-6">
 									<button type="submit" class="btn btn-green">S'abonner maintenant</button>
@@ -166,7 +169,7 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 			</div>
 		</div>
 		<div class="cgu container-fluid text-center">
-			<h2>CGU (cliquez ici): <a target="_blank" href="./cgu.pdf"><img style="width: 50px;" src="./images/pdf_icon.png"/></a></h2>
+			<h2>CGU (cliquez ici): <a target="_blank" href="./cgu.pdf"><img alt="logo pdf" style="width: 50px;" src="./images/pdf_icon.png"/></a></h2>
 		</div>
 		<div id="temoignage2"></div>
 		<div id="newsletter" class="greenbg container-fluid">
@@ -176,7 +179,8 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 					<h4 class="text-xs-center" style="font-familly: brandon; color: white;">Recevez notre newsletter !</h4><br>
 					<div class="row">
 						<div class="col-xs-10 col-md-6">
-							<input type="email" name="mail" class="form-control inputfooter" placeholder="Addresse Email"/>
+							<input type="email" name="email" class="form-control inputfooter" placeholder="Addresse Email"/>
+							<input hidden type="text" name="part" value="footer"/>
 						</div>
 						<div class="col-xs-2 col-md-6">
 							<button type="submit" class="btn btn-white">GO</button>
@@ -186,14 +190,14 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 				<br class="disabled-xs">
 				<div class="disabled-xs col-xs-4"></div>
 				<div class="col-xs-4 col-md-3 text-xs-center">
-					<img src="./images/hm_black.png" style="width: 135px; height: 92px; object-fit: cover;"/>
+					<img alt="hellomarcel black" src="./images/hm_black.png" style="width: 135px; height: 92px; object-fit: cover;"/>
 				</div>
 				<br class="disabled-xs">
 				<br class="disabled-xs">
 				<br class="disabled-xs">
 				<br class="disabled-xs">
 				<div class="col-md-4" style="text-align: center;"><br>
-					<h4 style="font-familly: brandon;"><a class="footerlink" style="color: white;" target="_blank" href="https://www.facebook.com/hellohellomarcel/">Retrouver nous sur Facebook ! <img style="width: 28px; height: 29px; object-fit: cover;" src="./images/facebook_logo.png"/></a></h4><br><br>
+					<h4 style="font-familly: brandon;"><a class="footerlink" style="color: white;" target="_blank" href="https://www.facebook.com/hellohellomarcel/">Retrouver nous sur Facebook ! <img alt="facebook logo" style="width: 28px; height: 29px; object-fit: cover;" src="./images/facebook_logo.png"/></a></h4><br><br>
 					<span style="font-size: 13px; color: #309964;">&nbsp;&nbsp;&nbsp;<a class="footerlink2" href="mailto:contact@hellomarcel.fr">contact@hellomarcel.fr</a>&nbsp; &nbsp; &nbsp; &nbsp;© Wings 2017</span>
 				</div>
 			</div>

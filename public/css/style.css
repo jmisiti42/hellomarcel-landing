@@ -25,6 +25,28 @@
     }
 }
 
+.iframevd {
+    padding-top: 25px;
+    padding-bottom: 67.5%;
+	width: 0;
+	height: 0;
+	position: relative;
+}
+
+.iframevd iframe {
+    box-sizing: border-box;
+    background: url('../images/empty_iphone.png') center center no-repeat;
+    background-size: contain;
+	padding-top: 50px;
+	padding-bottom: 60px;
+    padding-right: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+	width: 272px;
+	height: 546px;
+}
+
 h1 {
 	font-size:48px;
 	font-family: brandon;
@@ -259,10 +281,6 @@ a:active {
 .buttongo:hover {
 	color: white !important;
 	background-color: lightgrey;
-}
-
-.emptyIphone {
-	margin-bottom: 40px;
 }
 
 .nav {

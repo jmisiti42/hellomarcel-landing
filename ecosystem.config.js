@@ -6,7 +6,7 @@ module.exports = {
 	deploy: {
 		production: {
 		  user: 'ubuntu',
-		  host: 'ec2-18-195-155-105.eu-central-1.compute.amazonaws.com',
+		  host: 'ec2-35-158-165-92.eu-central-1.compute.amazonaws.com',
 		  key: '.ssh/aws-marcel.pem',
 		  ref: 'origin/master',
 		  repo: 'git@github.com:jmisiti42/hellomarcel-landing.git',

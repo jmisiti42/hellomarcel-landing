@@ -1,9 +1,9 @@
 const express				= require('express');
 const bodyParser			= require('body-parser');
 const request				= require('request');
-const mailchimpInstance		= 'us6';
-const listUniqueId			= 'b6a82d89f0';
-const mailchimpApiKey		= '637274b5ab272affbf7df7d3723ea2a1-us6';
+const mailchimpInstance		= 'us16';
+const listUniqueId			= 'f1b321ee6e';
+const mailchimpApiKey		= 'fc9db4d21bab5a8d956069a08d730255-us16';
 const app					= express();
 
 app.use(express.static('public'));

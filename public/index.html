@@ -15,7 +15,7 @@
 	<body>
 		<!-- div customer chat -->
 		<div class="fb-customerchat" page_id="1884786881751064"></div>
-		<div id="header" class="container-fluid" style="width:100%; position: fixed; background-color: rgba(0, 0, 0, 0.4); z-index: 999;">
+		<div id="header" class="container-fluid" style="padding: 0; width:100%; position: fixed; background-color: rgba(0, 0, 0, 0.4); z-index: 999;">
 			<div class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="row">
@@ -37,7 +37,7 @@
 		<div id="whois" class="whitebg container-fluid">
 			<div class="row">
 				<div class="col-md-6 text-center">
-					<img alt="chat preview" style="padding-left: 15px; height: 427px; object-fit: cover; margin-top: -450px;" src="./images/chat_preview.png"/>
+					<img alt="chat preview" style="height: 427px; object-fit: cover; margin-top: -450px;" src="./images/chat_preview.png"/>
 				</div>
 				<div class="col-xs-1"></div>
 				<div class="hidden-sm hidden-xs col-md-1">
@@ -88,8 +88,8 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 				<div class="col-md-2"></div>
 				<div class="greybg col-md-8">
 					<div class="row">
-						<div class="col-xs-4">
-							<img alt="hellomarcel with glasses" src="./images/hm_glasses.png" style="width: 141px; height: 128px; object-fit: cover;"/>
+						<div class="col-xs-4" style="padding: 0;">
+							<img alt="hellomarcel with glasses" src="./images/hm_glasses.png" style="max-width: 141px; max-height: 128px; object-fit: cover;"/>
 						</div>
 						<div class="col-xs-8">
 							<h6>Recevez notre newsletter !</h6><br>
@@ -111,7 +111,7 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 			<div class="row">
 				<div class="col-md-6">
 					<div class="row">
-						<div class="col-xs-4"></div>
+						<div class="col-md-4"></div>
 						<div class="col-xs-4 iframevd"><iframe frameborder="0" title="External Vimeo" aria-label="External Vimeo" align="center" src="//player.vimeo.com/video/222659642?autoplay=true&amp;loop=false&amp;byline=false&amp;portrait=false&amp;title=false"></iframe></div>
 					</div>
 				</div>
@@ -182,7 +182,7 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 							<input type="email" name="email" class="form-control inputfooter" placeholder="Addresse Email"/>
 							<input hidden type="text" name="part" value="footer"/>
 						</div>
-						<div class="col-xs-2 col-md-6">
+						<div class="col-xs-2 col-md-6" style="padding: 0;">
 							<button type="submit" class="btn btn-white">GO</button>
 						</div>
 					</div>
@@ -230,6 +230,10 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 							return false;
 						}
 					}
+				});
+
+				$('btn').click(() => {
+					console.log('test');
 				});
 
 				if($(window).scrollTop() + $(window).height() == $(document).height()) {

@@ -1,9 +1,14 @@
 const express				= require('express');
 const bodyParser			= require('body-parser');
-const request				= require('request');
 const mailchimpInstance		= 'us16';
 const listUniqueId			= 'f1b321ee6e';
 const mailchimpApiKey		= 'fc9db4d21bab5a8d956069a08d730255-us16';
+const Mailchimp 			= require('mailchimp-api-v3')
+const mailchimp 			= new Mailchimp(mailchimpApiKey);
+const validateEmail			= (email) => {
+	const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+}
 const app					= express();
 
 app.use(express.static('public'));
@@ -11,20 +16,25 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.post('/signup', function (req, res) {
-    request.post('https://' + mailchimpInstance + '.api.mailchimp.com/3.0/lists/' + listUniqueId + '/members/')
-		.set('Content-Type', 'application/json;charset=utf-8')
-		.set('Authorization', 'Basic ' + new Buffer('any:' + mailchimpApiKey ).toString('base64'))
-		.send({
-			'email_address': req.body.email,
-			'status': 'subscribed',
-			'merge_fields': {
-				'FROM': req.body.part
-			}
-		}).end(function(err, response) {
-			if (response.status < 300 || (response.status === 400 && response.body.title === "Member Exists")) {
-				res.send('Signed Up!');
-			} else {
-				res.send('Sign Up Failed :(');
+	if (!req.body || !req.body.email || !validateEmail(req.body.email))
+		res.json({ status: 'ERROR', msg: 'Veuillez renseigner une addresse email valide.' });
+	const email = req.body.email;
+	const part = req.body.part ? req.body.part : 'Inconnu.';
+	mailchimp.post('/lists/' + listUniqueId + '/members', {
+			email_address : email,
+			merge_fields: {
+		        "PART": part
+		    },
+			status : 'subscribed'
+		}).then(function(results) {
+			res.json({ status: 'OK' });
+		}).catch(function (err) {
+			if (err.title == "Member Exists")
+				res.json({ status: 'ERROR', msg: "Vous êtes déjà inscrit !"});
+			else if (err.title == "Invalid Resource")
+				res.json({ status: 'ERROR', msg: "Veuillez attendre avant de vous inscrire à une nouvelle newsletter."});
+			else {
+				res.json({ status: 'ERROR', msg: err.detail });
 			}
 		});
 });

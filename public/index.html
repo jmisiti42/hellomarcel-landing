@@ -93,14 +93,15 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 						</div>
 						<div class="col-xs-8">
 							<h6>Recevez notre newsletter !</h6><br>
-							<div class="row">
+							<div class="formnews1 row">
 								<div class="col-xs-9 col-md-6">
-									<input type="email" name="email" class="form-control" placeholder="Addresse Email"/>
-									<input hidden type="text" name="part" value="middle"/>
+									<input type="email" name="email" class="mailform1 form-control" placeholder="Addresse Email"/>
+									<input hidden type="text" name="part" class="partform1" value="middle"/>
 								</div>
 								<div class="col-xs-9 col-md-6">
-									<button type="submit" class="btn btn-green">S'abonner maintenant</button>
+									<button type="submit" class="form1 btn btn-green">S'abonner maintenant</button>
 								</div>
+								<div class="col-xs-12"><small class="text-danger formsmall"></small></div>
 							</div>
 						</div>
 					</div>
@@ -177,14 +178,14 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 				<div class="col-md-1"></div>
 				<div class="col-md-4">
 					<h4 class="text-xs-center" style="font-familly: brandon; color: white;">Recevez notre newsletter !</h4><br>
-					<div class="row">
+					<div class="formnews2 row">
 						<div class="col-xs-10 col-md-6">
-							<input type="email" name="email" class="form-control inputfooter" placeholder="Addresse Email"/>
-							<input hidden type="text" name="part" value="footer"/>
+							<input type="email" name="email" class="mailform2 form-control inputfooter" placeholder="Addresse Email"/>
 						</div>
 						<div class="col-xs-2 col-md-6" style="padding: 0;">
-							<button type="submit" class="btn btn-white">GO</button>
+							<button type="submit" class="form2 btn btn-white">GO</button>
 						</div>
+						<div class="col-xs-12"><small class="text-danger formsmall"></small></div>
 					</div>
 				</div>
 				<br class="disabled-xs">
@@ -212,10 +213,36 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 		<script src="https://use.fontawesome.com/ffb5c24dc5.js"></script>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="./javascript/jquery.cookie.js"></script>
 		<script>
 			$(function() {
 				//refer here all parts of the pages so navbar will be updated
 				const parts = new Array('newsletter', 'home', 'whois', 'temoignage');
+				const throwError = (msg) => {
+					$('.formsmall').html(msg);
+				}
+
+				const validateEmail = (email) => {
+					const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+					return re.test(email);
+				}
+
+				const elementScrolled = (elem, elem2) => {
+					var docViewTop = $(window).scrollTop();
+					var elemTop = $(elem).offset().top - ($('#header').height() + 1);
+					var elemBottom = $(elem2).offset().top - ($('#header').height() + 1);
+					return ((docViewTop >= elemTop) && (docViewTop <= elemBottom));
+				}
+
+				const validateForm = () => {
+					$.cookie('subscribed', 'true', { expires: 31 });
+					$('.formnews1').html('<div class="col-xs-12 text-center"><span style="color: black;">Votre inscription a été validée avec succès !</span></div>');
+					$('.formnews2').html('<div class="col-xs-12 text-center"><span style="color: white;">Votre inscription a été validée avec succès !</span></div>');
+				}
+
+				if ($.cookie('subscribed') == 'true') {
+					validateForm();
+				}
 
 				//function to scroll to the position and disable anchor system
 				$('a[href*="#"]').not('[href="#0"]').not('[href="#"]').click(function(event) {
@@ -232,8 +259,38 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 					}
 				});
 
-				$('btn').click(() => {
-					console.log('test');
+				$('.form2').click(() => {
+					$('.form2').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
+					if (validateEmail($('.mailform2')[0].value)) {
+						$.post("/signup", { email: $('.mailform2')[0].value, part: 'footer' }, (data) => {
+							if (data.status == 'OK') {
+								validateForm();
+							} else {
+								$('.form2').html('GO');
+								throwError(data.msg);
+							}
+						});
+					} else {
+						throwError('Veuillez renseigner une addresse email valide.');
+						$('.form2').html('GO');
+					}
+				});
+
+				$('.form1').click(() => {
+					$('.form1').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
+					if (validateEmail($('.mailform1')[0].value)) {
+						$.post("/signup", { email: $('.mailform1')[0].value, part: 'middle' }, (data) => {
+							if (data.status == 'OK') {
+								validateForm();
+							} else {
+								$('.form1').html('S\'abonner maintenant');
+								throwError(data.msg);
+							}
+						});
+					} else {
+						$('.form1').html('S\'abonner maintenant');
+						throwError('Veuillez renseigner une addresse email valide.');
+					}
 				});
 
 				if($(window).scrollTop() + $(window).height() == $(document).height()) {
@@ -257,14 +314,6 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 					   });
 				   }
 				});
-
-				//detect if window scroll is between elem and elem2
-				function elementScrolled(elem, elem2) {
-					var docViewTop = $(window).scrollTop();
-					var elemTop = $(elem).offset().top - ($('#header').height() + 1);
-					var elemBottom = $(elem2).offset().top - ($('#header').height() + 1);
-					return ((docViewTop >= elemTop) && (docViewTop <= elemBottom));
-				}
 			});
 		</script> <!-- Script de page -->
 	</body>

@@ -112,8 +112,7 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 			<div class="row">
 				<div class="col-md-6">
 					<div class="row">
-						<div class="col-md-4"></div>
-						<div class="col-xs-4 iframevd"><iframe frameborder="0" title="External Vimeo" aria-label="External Vimeo" align="center" src="//player.vimeo.com/video/222659642?autoplay=true&amp;loop=false&amp;byline=false&amp;portrait=false&amp;title=false"></iframe></div>
+						<div class="col-xs-12 text-center iframevd"><iframe frameborder="0" title="External Vimeo" aria-label="External Vimeo" align="center" src="//player.vimeo.com/video/222659642?autoplay=true&amp;loop=false&amp;byline=false&amp;portrait=false&amp;title=false"></iframe></div>
 					</div>
 				</div>
 				<div class="col-md-6 redbg text-center">
@@ -174,7 +173,7 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 		</div>
 		<div id="temoignage2"></div>
 		<div id="newsletter" class="greenbg container-fluid">
-			<div class"row text-xs-center">
+			<div class"row">
 				<div class="col-md-1"></div>
 				<div class="col-md-4">
 					<h4 class="text-xs-center" style="font-familly: brandon; color: white;">Recevez notre newsletter !</h4><br>
@@ -234,14 +233,14 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 					return ((docViewTop >= elemTop) && (docViewTop <= elemBottom));
 				}
 
-				const validateForm = () => {
+				const validateForm = (msg) => {
 					$.cookie('subscribed', 'true', { expires: 31 });
-					$('.formnews1').html('<div class="col-xs-12 text-center"><span style="color: black;">Votre inscription a été validée avec succès !</span></div>');
-					$('.formnews2').html('<div class="col-xs-12 text-center"><span style="color: white;">Votre inscription a été validée avec succès !</span></div>');
+					$('.formnews1').html('<div class="col-xs-12 text-xs-center"><span style="font-size: 14px; color: black;">' + msg + '</span></div>');
+					$('.formnews2').html('<div class="col-xs-12 text-xs-center"><span style="font-size: 14px; color: white;">' + msg + '</span></div>');
 				}
 
 				if ($.cookie('subscribed') == 'true') {
-					validateForm();
+					validateForm('Vous êtes déjà inscrit à notre newsletter.');
 				}
 
 				//function to scroll to the position and disable anchor system
@@ -264,7 +263,7 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 					if (validateEmail($('.mailform2')[0].value)) {
 						$.post("/signup", { email: $('.mailform2')[0].value, part: 'footer' }, (data) => {
 							if (data.status == 'OK') {
-								validateForm();
+								validateForm('Votre inscription a été validée avec succès !');
 							} else {
 								$('.form2').html('GO');
 								throwError(data.msg);
@@ -281,7 +280,7 @@ Hello Marcel déniche les meilleurs plans du moment !</span>
 					if (validateEmail($('.mailform1')[0].value)) {
 						$.post("/signup", { email: $('.mailform1')[0].value, part: 'middle' }, (data) => {
 							if (data.status == 'OK') {
-								validateForm();
+								validateForm('Votre inscription a été validée avec succès !');
 							} else {
 								$('.form1').html('S\'abonner maintenant');
 								throwError(data.msg);

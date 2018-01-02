@@ -66,22 +66,24 @@ strong {
 	height: 40px;
 }
 
-@media (max-width: 990px) {
-	.text-xs-center { text-align: center; }
-
-	.fa-whois { font-size: 9vw !important; }
+#bg {
+	z-index: -50;
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
 }
 
-@media (min-width: 990px) {
-	.disabled-xs  { display: none; }
-}
-
-@media (max-width: 405px) {
-	.iframevd iframe { margin-left: 0%; }
-
-	.form-control::placeholder { font-size: 14px; }
-
-	.btn-green { font-size: 12px; }
+#bg img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	min-width: 50%;
+	min-height: 50%;
 }
 
 h1 {
@@ -144,40 +146,6 @@ span {
 
 h4 {
 	font-family: brandon;
-}
-
-@media (max-width:1200px) {
-	.avis {
-		height: 390px;
-	}
-}
-
-@media (max-width:990px) {
-	.avis {
-		height: 100%;
-	}
-}
-
-@media (min-width:0px) and (max-width:767px) {
-	h1 { font-size: 54px; }
-
-	h2 { font-size:28px; }
-
-	h4 { font-size:26px; }
-
-	h6 { font-size:26px; }
-
-	.form-control { font-size: 22px; }
-
-	span { font-size: 26px; }
-
-	.navlink { font-size: 3.5vw; }
-
-	.fa-star, .fa-star-o { font-size: 5vw !important; }
-
-	.fa-quote-left { font-size: 9vw !important; }
-
-	.temoignagespan { font-size: 18px; }
 }
 
 input {
@@ -321,30 +289,62 @@ a:active {
 	font-size: 36px;
 }
 
-#bg {
-	z-index: -50;
-	position: fixed;
-	top: -50%;
-	left: -50%;
-	width: 200%;
-	height: 200%;
-}
-#bg img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-	min-width: 50%;
-	min-height: 50%;
+body {
+	font-family: brandon;
 }
 
-body {
-	background: url('../images/bg1.png') no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	font-family: brandon;
+@media (max-width:1200px) {
+	.avis {
+		height: 390px;
+	}
+}
+
+@media (max-width:990px) {
+	.avis {
+		height: 100%;
+	}
+}
+
+@media (min-width:0px) and (max-width:767px) {
+	h1 { font-size: 54px; }
+
+	h2 { font-size:28px; }
+
+	h4 { font-size:26px; }
+
+	h6 { font-size:26px; }
+
+	.form-control { font-size: 22px; }
+
+	#bg { left: -100%; }
+
+	span { font-size: 26px; }
+
+	.navlink { font-size: 3.5vw; }
+
+	.fa-star, .fa-star-o { font-size: 5vw !important; }
+
+	.fa-quote-left { font-size: 9vw !important; }
+
+	.temoignagespan { font-size: 18px; }
+}
+
+@media (max-width: 990px) {
+	.text-xs-center { text-align: center; }
+
+	.fa-whois { font-size: 9vw !important; }
+}
+
+@media (min-width: 990px) {
+	.disabled-xs  { display: none; }
+}
+
+@media (max-width: 425px) {
+	.iframevd iframe { margin-left: 0%; }
+
+	#bg { left: -250%; }
+
+	.form-control::placeholder { font-size: 14px; }
+
+	.btn-green { font-size: 12px; }
 }

@@ -49,6 +49,8 @@ html {
 	background-color: rgba(215, 215, 215, 0.1) !important;
 }
 
+.fb_dialog, .fb_reset {position: fixed !important;z-index: 10000 !important;}
+
 .fa-quote-left {
 	font-size: 5vw !important;
 	color: white;

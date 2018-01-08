@@ -215,8 +215,10 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="./javascript/jquery.cookie.js"></script>
 		<script>
+			$(document).ready(function(){
+			    $(this).scrollTop(0);
+			});
 			$(function() {
-				$(this).scrollTop(0);
 				//refer here all parts of the pages so navbar will be updated
 				const parts = new Array('newsletter', 'home', 'whois', 'temoignage');
 				const throwError = (msg) => {

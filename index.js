@@ -14,6 +14,14 @@ const app					= express();
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+	var msg = "Venez discuter !"
+	if (req.query.msg)
+		msg = req.query.msg;
+	res.render('index', { msg });
+});
 
 app.post('/signup', function (req, res) {
 	if (!req.body || !req.body.email || !validateEmail(req.body.email))

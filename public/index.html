@@ -216,6 +216,7 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 		<script src="./javascript/jquery.cookie.js"></script>
 		<script>
 			$(function() {
+				$(this).scrollTop(0);
 				//refer here all parts of the pages so navbar will be updated
 				const parts = new Array('newsletter', 'home', 'whois', 'temoignage');
 				const throwError = (msg) => {
@@ -314,6 +315,8 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 					   });
 				   }
 				});
+
+
 			});
 		</script> <!-- Script de page -->
 	</body>

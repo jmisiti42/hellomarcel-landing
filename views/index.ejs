@@ -39,18 +39,22 @@
 				</div>
 			</div>
 		</div>
-		<div id="home" class="part"></div>
-		<div id="home2"></div>
-		<div id="whois" class="whitebg container-fluid">
-			<div class="row">
-				<div class="col-md-6 text-center">
-					<img alt="chat preview" style="height: 427px; object-fit: cover; margin-top: -450px;" src="./images/chat_preview.png"/>
+		<div id="home">
+			<div style="margin-right: 0px;" class="row">
+				<div class="col-md-6">
+					<div class="row text-center" style="padding-top: 28px;">
+						<div class="col-xs-12 iframevd"><iframe id="ifram" frameborder="0" title="External Vimeo" aria-label="External Vimeo" align="center" src="//player.vimeo.com/video/222659642?autoplay=true&amp;loop=true&amp;byline=false&amp;portrait=false&amp;title=false"></iframe></div>
+					</div>
 				</div>
 				<div class="col-xs-1"></div>
-				<div class="hidden-sm hidden-xs col-md-1">
-					<img alt="hellomarcel" style="height: 150px; object-fit: cover; margin-top: -111px;" src="./images/hm.png"/>
+				<div class="hidden-sm hidden-xs col-md-2">
+					<img alt="hellomarcel" class="hellomarcel" src="./images/hm.png"/>
 				</div>
 			</div>
+		</div>
+		<div id="home2"></div>
+		<div id="whois" class="whitebg container-fluid">
+			<br />
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-3">
@@ -118,10 +122,8 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 		</div>
 		<div style="padding-top: 30px;" class="whitebg container-fluid">
 			<div class="row lightgreybg">
-				<div class="col-md-6">
-					<div class="row text-center" style="padding-top: 28px;">
-						<div class="col-xs-12 iframevd"><iframe id="ifram" frameborder="0" title="External Vimeo" aria-label="External Vimeo" align="center" src="//player.vimeo.com/video/222659642?autoplay=true&amp;loop=true&amp;byline=false&amp;portrait=false&amp;title=false"></iframe></div>
-					</div>
+				<div class="col-md-6 text-center">
+					<img src="./images/iphone_event.png" style="top: 0; margin-top: 15px; margin-bottom: 15px; height: 546px; object-fit: cover;" alt="ihpone"/>
 				</div>
 				<div class="col-md-6 redbg">
 					<h1 class="white h1white">Hello Marcel<br>Nouvelle Version</h1>
@@ -225,9 +227,10 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 			$(function() {
 				//refer here all parts of the pages so navbar will be updated
 				const parts = new Array('newsletter', 'home', 'whois', 'temoignage');
+
 				const throwError = (msg) => {
 					$('.formsmall').html(msg);
-				}
+				};
 
 				const validateEmail = (email) => {
 					const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

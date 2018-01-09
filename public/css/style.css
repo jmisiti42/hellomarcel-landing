@@ -51,11 +51,18 @@ html {
 .iframevd {
 	position: relative;
 	height: 546px;
-	margin-bottom: 30px;
+	margin-bottom: 29px;
 }
 
 .lightgreybg {
 	background-color: rgba(215, 215, 215, 0.1) !important;
+}
+
+.hellomarcel {
+	height: 80px;
+	margin-top: 524px;
+	padding-bottom: -50px !important;
+	object-fit: cover;
 }
 
 .accroche {
@@ -71,8 +78,6 @@ html {
 	bottom: 28px;
 	right: 100px;
 }
-
-
 
 .accroche:after, .accroche:before {
     content: ' ';
@@ -103,10 +108,12 @@ html {
     box-sizing: border-box;
     background: url('../images/empty_iphone.png') center center no-repeat;
     background-size: contain;
+	margin-top: 149px;
 	padding-top: 50px;
-	padding-bottom: 60px;
-	width: 272px;
-	height: 546px;
+	padding-bottom: 0;
+	height: 427px;
+	z-index: 0;
+	position: relative;
 }
 
 .fa-whois {
@@ -404,7 +411,7 @@ body {
 }
 
 @media (max-width: 425px) {
-	.iframevd iframe { margin-left: 0%; }
+	.iframevd iframe { margin-left: 0%;  }
 
 	#bg { left: -220%; }
 

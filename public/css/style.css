@@ -415,6 +415,8 @@ body {
 
 	.accroche { font-size: 15px; }
 
+	.accroche:after, .accroche:before { border: 12px solid transparent; }
+
 	#bg { left: -220%; }
 
 	.form-control::placeholder { font-size: 14px; }

@@ -413,6 +413,8 @@ body {
 @media (max-width: 425px) {
 	.iframevd iframe { margin-left: 0%;  }
 
+	.accroche { font-size: 15px; }
+
 	#bg { left: -220%; }
 
 	.form-control::placeholder { font-size: 14px; }

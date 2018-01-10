@@ -17,7 +17,7 @@
 		<!-- div customer chat -->
 		<!-- Richard : 1657821470923577 -->
 		<!-- Marcel: 1884786881751064 -->
-		<div class="fb-customerchat" minimized="true" ref="fromccp" page_id="1884786881751064"></div>
+		<div class="fb-customerchat" hidden minimized="true" ref="fromccp" page_id="1657821470923577"></div>
 		<div id="bg">
 			<img src="./images/bg1.png" alt="background image">
 		</div>
@@ -43,7 +43,7 @@
 			<div style="margin-right: 0px;" class="row">
 				<div class="col-md-6">
 					<div class="row text-center" style="padding-top: 28px;">
-						<div class="col-xs-12 iframevd"><video id="v1" autoplay loop><source src="./videos/v1.MP4" type="video/mp4"/></video></div>
+						<div class="col-xs-12 iframevd"><video id="v1" autoplay loop><source src="./videos/v1.mp4" type="video/mp4"/></video></div>
 					</div>
 				</div>
 				<div style="margin-left: -100px;" class="hidden-sm hidden-xs col-md-5">
@@ -131,7 +131,7 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 			<div class="row lightgreybg">
 				<div class="col-md-6">
 					<div class="row text-center">
-						<div class="col-xs-12 iframevd2"><video id="v2" autoplay loop><source src="./videos/v2.MP4" type="video/mp4"/></video></div>
+						<div class="col-xs-12 iframevd2"><video id="v2" autoplay loop><source src="./videos/v2.mp4" type="video/mp4"/></video></div>
 					</div>
 				</div>
 				<div class="col-md-6 redbg text-center">
@@ -225,7 +225,7 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 			$(function() {
 				//refer here all parts of the pages so navbar will be updated
 				const parts = new Array('newsletter', 'home', 'whois', 'temoignage');
-
+				$('#fb-root').hide();
 				const throwError = (msg) => {
 					$('.formsmall').html(msg);
 				};

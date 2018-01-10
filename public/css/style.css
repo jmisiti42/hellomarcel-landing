@@ -18,6 +18,8 @@ h2 a, h2 a:hover, h2 a:active {
 	font-size: 12px;
 }
 
+.fb-root { display: none !important; }
+
 h6 {
 	font-size: 28px;
 }
@@ -83,7 +85,7 @@ html {
 	border-radius: 50px;
 	font-size: 20px;
 	padding: 20px 0px 20px 0px;
-	bottom: 14px;
+	bottom: 16px;
 	right: 100px;
 }
 
@@ -114,8 +116,8 @@ html {
     box-sizing: border-box;
     background: url('../images/empty_iphone.png') center center no-repeat;
     background-size: contain;
-	margin-top: 25px;
-	padding: 70px 20px 10px 15px;
+	margin-top: 5px;
+	padding: 70px 20px 23px 15px;
 	height: 497px;
 	margin-bottom: -14px;
 	z-index: 0;
@@ -393,7 +395,7 @@ body {
 
 @media (min-width:0px) and (max-width:767px) {
 
-	.msgaccroche { font-size: 10px; }
+	.msgaccroche { font-size: 13px; }
 
 	.hellomarcel { height: 20px; }
 
@@ -436,8 +438,6 @@ body {
 
 @media (max-width: 425px) {
 	.iframevd iframe { margin-left: 0%;  }
-
-	.accroche { font-size: 15px; }
 
 	.accroche:after, .accroche:before { border: 12px solid transparent; }
 

@@ -22,6 +22,14 @@ h6 {
 	font-size: 28px;
 }
 
+.btnlink {
+	color: #45DD90;
+}
+
+.btnlink:hover {
+	color: white;
+}
+
 .temoigns {
 	font-size: 1.4vw;
 }
@@ -48,21 +56,21 @@ html {
 	overflow: hidden;
 }
 
-.iframevd {
-	position: relative;
-	height: 546px;
-	margin-bottom: 29px;
-}
-
 .lightgreybg {
 	background-color: rgba(215, 215, 215, 0.1) !important;
 }
 
 .hellomarcel {
-	height: 80px;
-	margin-top: 189px;
-	padding-bottom: -50px !important;
+	height: 30px;
+	padding-bottom: 4px;
+	padding-left: 20px;
 	object-fit: cover;
+}
+
+.msgaccroche {
+	font-size: 20px;
+	padding-left: 10px;
+	padding-right: 20px;
 }
 
 .accroche {
@@ -74,8 +82,8 @@ html {
 	filter: drop-shadow(0px 3pt 12pt rgba(0, 0, 0, 0.15));
 	border-radius: 50px;
 	font-size: 20px;
-	padding: 10px 30px 10px 30px;
-	bottom: 28px;
+	padding: 20px 0px 20px 0px;
+	bottom: 14px;
 	right: 100px;
 }
 
@@ -88,30 +96,38 @@ html {
 }
 
 .accroche:before {
-    border-top-color: white;
-    border-right-color: white;
+    border-top-color: #fff;
+    border-right-color: #fff;
 }
 
 .accroche:after {
-    border-top-color: white;
-    border-right-color: white;
+    border-top-color: #fff;
+    border-right-color: #fff;
 }
-
-.fb_dialog, .fb_reset {position: fixed !important;z-index: 10000 !important;}
 
 .fa-quote-left {
 	font-size: 5vw !important;
 	color: white;
 }
 
-.iframevd iframe {
+.iframevd video {
     box-sizing: border-box;
     background: url('../images/empty_iphone.png') center center no-repeat;
     background-size: contain;
-	margin-top: 148px;
-	padding-top: 50px;
-	padding-bottom: 0;
-	height: 427px;
+	margin-top: 25px;
+	padding: 70px 20px 10px 15px;
+	height: 497px;
+	margin-bottom: -14px;
+	z-index: 0;
+	position: relative;
+}
+
+.iframevd2 video {
+    box-sizing: border-box;
+    background: url('../images/empty_iphone_full.png') center center no-repeat;
+    background-size: contain;
+	padding: 60px 10px 70px 10px;
+	height: 506px;
 	z-index: 0;
 	position: relative;
 }
@@ -267,10 +283,13 @@ a:active {
 }
 
 .title {
-	width: 143px;
-	height: 63px;
+	width: 240px;
 	object-fit: cover;
-	margin-top: 20px;
+	margin-bottom: -30px;
+}
+
+.fb_dialog {
+	position: relative;
 }
 
 .whitebg {
@@ -311,7 +330,7 @@ a:active {
 
 .redbg {
 	background-color: #F2496A;
-	padding-bottom: 100px;
+	padding-bottom: 20px;
 	padding-top: 30px;
 	padding-left: 30px;
 	padding-right: 30px;
@@ -373,6 +392,11 @@ body {
 }
 
 @media (min-width:0px) and (max-width:767px) {
+
+	.msgaccroche { font-size: 10px; }
+
+	.hellomarcel { height: 20px; }
+
 	h1 { font-size: 54px; }
 
 	h2 { font-size:28px; }
@@ -389,7 +413,7 @@ body {
 
 	#bg { left: -100%; }
 
-	span { font-size: 26px; }
+	span { font-size: 22px; }
 
 	.navlink { font-size: 3.5vw; }
 

@@ -117,9 +117,9 @@ html {
     background: url('../images/empty_iphone.png') center center no-repeat;
     background-size: contain;
 	margin-top: 5px;
-	padding: 70px 20px 23px 15px;
+	padding: 50px 22px 0px 17px;
 	height: 497px;
-	margin-bottom: -14px;
+	margin-bottom: -5px;
 	z-index: 0;
 	position: relative;
 }

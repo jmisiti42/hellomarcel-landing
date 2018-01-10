@@ -30,6 +30,8 @@ h6 {
 	color: white;
 }
 
+.fb_dialog, .fb_reset {position: fixed !important;z-index: 10000 !important;}
+
 .temoigns {
 	font-size: 1.4vw;
 }

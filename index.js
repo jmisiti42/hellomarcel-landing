@@ -6,6 +6,10 @@ const mailchimpApiKey		= 'fc9db4d21bab5a8d956069a08d730255-us16';
 const Mailchimp 			= require('mailchimp-api-v3');
 const mailchimp 			= new Mailchimp(mailchimpApiKey);
 const app					= express();
+const options 				= {
+	cert: fs.readFileSync('/etc/letsencrypt/live/hellomarcel.fr/fullchain.pem'),
+	key: fs.readFileSync('/etc/letsencrypt/live/hellomarcel.fr/privkey.pem')
+};
 const validateEmail			= (email) => {
 	const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
@@ -15,6 +19,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(require('helmet')());
+
 app.set('view engine', 'ejs');
 app.disable('x-powered-by');
 app.enable('trust proxy');
@@ -50,6 +55,5 @@ app.post('/signup', function (req, res) {
 		});
 });
 
-http.createServer(app).listen(3000, () => {
-	console.log('server listening on port 3000');
-});
+app.listen(3000, () => console.log('Server running on port 3000'));
+https.createServer(options, app).listen(8443);

@@ -55,5 +55,4 @@ app.post('/signup', function (req, res) {
 		});
 });
 
-app.listen(3000, () => console.log('Server running on port 3000'));
-https.createServer(options, app).listen(8443);
+http.createServer(app).listen(5001, () => console.log(`Hello`));

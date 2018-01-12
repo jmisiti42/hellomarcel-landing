@@ -1,16 +1,10 @@
 const express				= require('express');
-const https					= require('https');
-const fs					= require('fs');
 const bodyParser			= require('body-parser');
 const mailchimpInstance		= 'us16';
 const listUniqueId			= 'f1b321ee6e';
 const mailchimpApiKey		= 'fc9db4d21bab5a8d956069a08d730255-us16';
 const Mailchimp 			= require('mailchimp-api-v3');
 const mailchimp 			= new Mailchimp(mailchimpApiKey);
-const options = {
-    cert: fs.readFileSync('./sslcert/fullchain.pem'),
-    key: fs.readFileSync('./sslcert/privkey.pem')
-};
 const validateEmail			= (email) => {
 	const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
@@ -62,4 +56,3 @@ app.post('/signup', function (req, res) {
 });
 
 app.listen(3000, () => console.log('Server running on port 3000'));
-https.createServer(options, app).listen(8443);

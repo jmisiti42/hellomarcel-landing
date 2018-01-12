@@ -5,11 +5,15 @@ const listUniqueId			= 'f1b321ee6e';
 const mailchimpApiKey		= 'fc9db4d21bab5a8d956069a08d730255-us16';
 const Mailchimp 			= require('mailchimp-api-v3');
 const mailchimp 			= new Mailchimp(mailchimpApiKey);
+const app					= express();
+const options 				= {
+	cert: fs.readFileSync('/etc/letsencrypt/live/hellomarcel.fr/fullchain.pem'),
+	key: fs.readFileSync('/etc/letsencrypt/live/hellomarcel.fr/privkey.pem')
+};
 const validateEmail			= (email) => {
 	const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
 }
-const app					= express();
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
@@ -18,13 +22,6 @@ app.use(require('helmet')());
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-	var msg = "Venez discuter !"
-	if (req.query.msg)
-		msg = req.query.msg;
-	res.render('index', { msg });
-});
-
-app.get('/var/www/html', (req, res) => {
 	var msg = "Venez discuter !"
 	if (req.query.msg)
 		msg = req.query.msg;
@@ -56,3 +53,4 @@ app.post('/signup', function (req, res) {
 });
 
 app.listen(3000, () => console.log('Server running on port 3000'));
+https.createServer(options, app).listen(8443);

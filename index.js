@@ -23,6 +23,13 @@ app.get('/', (req, res) => {
 	res.render('index', { msg });
 });
 
+app.get('/var/www/html', (req, res) => {
+	var msg = "Venez discuter !"
+	if (req.query.msg)
+		msg = req.query.msg;
+	res.render('index', { msg });
+});
+
 app.post('/signup', function (req, res) {
 	if (!req.body || !req.body.email || !validateEmail(req.body.email))
 		res.json({ status: 'ERROR', msg: 'Veuillez renseigner une addresse email valide.' });

@@ -20,6 +20,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(require('helmet')());
 app.set('view engine', 'ejs');
+app.disable('x-powered-by');
+app.enable('trust proxy');
 
 app.get('/', (req, res) => {
 	var msg = "Venez discuter !"
@@ -52,5 +54,6 @@ app.post('/signup', function (req, res) {
 		});
 });
 
-app.listen(3000, () => console.log('Server running on port 3000'));
-https.createServer(options, app).listen(8443);
+http.createServer(app).listen(3000, () => {
+	console.log('server listening on port 3000');
+});

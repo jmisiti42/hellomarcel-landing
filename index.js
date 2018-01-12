@@ -1,15 +1,12 @@
 const express				= require('express');
 const bodyParser			= require('body-parser');
+const http					= require('http');
 const mailchimpInstance		= 'us16';
 const listUniqueId			= 'f1b321ee6e';
 const mailchimpApiKey		= 'fc9db4d21bab5a8d956069a08d730255-us16';
 const Mailchimp 			= require('mailchimp-api-v3');
 const mailchimp 			= new Mailchimp(mailchimpApiKey);
 const app					= express();
-const options 				= {
-	cert: fs.readFileSync('/etc/letsencrypt/live/hellomarcel.fr/fullchain.pem'),
-	key: fs.readFileSync('/etc/letsencrypt/live/hellomarcel.fr/privkey.pem')
-};
 const validateEmail			= (email) => {
 	const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
@@ -55,4 +52,4 @@ app.post('/signup', function (req, res) {
 		});
 });
 
-http.createServer(app).listen(5001, () => console.log(`Hello`));
+http.createServer(app).listen(5001, () => console.log(`listening on port 5001`));

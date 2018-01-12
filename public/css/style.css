@@ -13,6 +13,29 @@
 	src: url('./AvenirLTStd-Heavy.woff');
 }
 
+.iframevd video {
+    box-sizing: border-box;
+    background: url('../images/empty_iphone.png') center center no-repeat;
+    background-size: contain;
+	margin-top: 5px;
+	padding: 40px 20px 0px 17px;
+	max-height: 357px;
+	width: 100%;
+	margin-bottom: -5px;
+	z-index: 0;
+	position: relative;
+}
+
+.iframevd2 video {
+    box-sizing: border-box;
+    background: url('../images/empty_iphone_full.png') center center no-repeat;
+    background-size: contain;
+	padding: 60px 10px 70px 10px;
+	height: 506px;
+	z-index: 0;
+	position: relative;
+}
+
 h2 a, h2 a:hover, h2 a:active {
 	color: black;
 	font-size: 12px;
@@ -110,28 +133,6 @@ html {
 .fa-quote-left {
 	font-size: 5vw !important;
 	color: white;
-}
-
-.iframevd video {
-    box-sizing: border-box;
-    background: url('../images/empty_iphone.png') center center no-repeat;
-    background-size: contain;
-	margin-top: 5px;
-	padding: 50px 22px 0px 17px;
-	height: 497px;
-	margin-bottom: -5px;
-	z-index: 0;
-	position: relative;
-}
-
-.iframevd2 video {
-    box-sizing: border-box;
-    background: url('../images/empty_iphone_full.png') center center no-repeat;
-    background-size: contain;
-	padding: 60px 10px 70px 10px;
-	height: 506px;
-	z-index: 0;
-	position: relative;
 }
 
 .fa-whois {
@@ -437,7 +438,6 @@ body {
 }
 
 @media (max-width: 425px) {
-	.iframevd iframe { margin-left: 0%;  }
 
 	.accroche:after, .accroche:before { border: 12px solid transparent; }
 

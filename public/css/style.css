@@ -56,7 +56,7 @@ h6 {
 .fb_dialog, .fb_reset {position: fixed !important;z-index: 10000 !important;}
 
 .temoigns {
-	font-size: 1.4vw;
+	font-size: 18px;
 }
 
 .vignettes {
@@ -82,7 +82,7 @@ html {
 }
 
 .lightgreybg {
-	background-color: rgba(215, 215, 215, 0.1) !important;
+	background-color: rgba(96, 94, 94, 0.2) !important;
 }
 
 .hellomarcel {
@@ -316,7 +316,7 @@ a:active {
 
 .greybg {
 	margin-top: 40px;
-	background-color: rgba(96,94,94,0.1);
+	background-color: rgba(96,94,94,0.2);
 	padding-left: 20px;
 	padding-right: 20px;
 }

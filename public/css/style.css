@@ -289,6 +289,7 @@ a:active {
 	width: 240px;
 	object-fit: cover;
 	margin-bottom: -30px;
+	padding-bottom: 10px;
 }
 
 .fb_dialog {
@@ -396,27 +397,52 @@ body {
 
 @media (min-width:0px) and (max-width:767px) {
 
+	.h1white {
+		font-size: 28px;
+	}
+
+	.h2white {
+		font-size: 18px;
+	}
+
+	.iframevd video {
+	    box-sizing: border-box;
+	    background: url('../images/empty_iphone.png') center center no-repeat;
+	    background-size: contain;
+		margin-top: 5px;
+		padding: 30px 22px 0px 17px;
+		max-height: 300px;
+		width: 100%;
+		margin-bottom: -5px;
+		z-index: 0;
+		position: relative;
+	}
+
 	.msgaccroche { font-size: 13px; }
 
 	.hellomarcel { height: 20px; }
 
-	h1 { font-size: 54px; }
+	h1 { font-size: 40px; }
 
-	h2 { font-size:28px; }
+	h2 { font-size:24px; }
 
-	h4 { font-size:26px; }
+	h4 { font-size:24px; }
 
-	h6 { font-size:26px; }
+	h6 { font-size:22px; }
 
 	.temoigns {
 		font-size: 3vw;
 	}
 
+	span { font-size: 22px; }
+
+	span.white {
+		font-size: 16px;
+	}
+
 	.form-control { font-size: 22px; }
 
 	#bg { left: -100%; }
-
-	span { font-size: 22px; }
 
 	.navlink { font-size: 3.5vw; }
 

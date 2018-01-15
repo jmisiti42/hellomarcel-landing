@@ -43,7 +43,7 @@
 			<div style="margin-right: 0px;" class="row">
 				<div class="col-md-6 text-center">
 					<div class="row text-center" style="padding-top: 28px;">
-						<div class="col-xs-12 iframevd"><video id="v1" autoplay loop><source src="./videos/video1.mp4" type="video/mp4"/></video></div>
+						<div class="col-xs-12 iframevd"><video playsinline muted autoplay loop id="v1"><source src="./videos/video1.mp4" type="video/mp4"/></video></div>
 					</div>
 				</div>
 				<div style="margin-left: -100px;" class="hidden-sm hidden-xs col-md-5">
@@ -131,7 +131,7 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 			<div class="row lightgreybg">
 				<div class="col-md-6">
 					<div class="row text-center">
-						<div class="col-xs-12 iframevd2"><video id="v2" autoplay loop><source src="./videos/video2.mp4" type="video/mp4"/></video></div>
+						<div class="col-xs-12 iframevd2"><video playsinline muted autoplay loop id="v2"><source src="./videos/video2.mp4" type="video/mp4"/></video></div>
 					</div>
 				</div>
 				<div class="col-md-6 redbg text-center">
@@ -333,9 +333,6 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 					   });
 				   }
 				});
-
-				$('video').get(0).play();
-				$('video').get(1).play();
 			});
 		</script> <!-- Script de page -->
 	</body>

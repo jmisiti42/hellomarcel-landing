@@ -231,7 +231,7 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 							<small class="text-danger" id="smallTextContact"></small>
 						</div>
 						<div class="modal-footer">
-							<button type="button" onclick="sendMail();" class="btn btn-default">Envoyer</button>
+							<button type="button" id="btnContact" onclick="sendMail();" class="btn btn-default">Envoyer</button>
 							<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
 						</div>
 					</div>
@@ -256,17 +256,21 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 				if ($('#textAreaContact').val().length >= 8 && ++ok) { 	$('#smallTextContact').html(''); }
 				else { $('#smallTextContact').html('<p style="margin-top: 10px;">Votre message doit contenir au moins 8 caractères.</p>'); }
 				if (ok >= 2) {
+					$('#btnContact').html('<img alt="fb loading" style="height: 18px;" src="./images/fbloading.gif"/>');
 					$.post("/mailer", { email: $('#inputContact').val(), message: $('#textAreaContact').val() }, (data) => {
 						if (data.status == 'OK') {
 							$('#topContactSuccess').html('Email envoyé avec succès !');
 							$('#topContactError').html('');
+							$('#btnContact').html('Envoyé !');
 							setTimeout(() => {
 								$('#inputContact').val('');
 								$('#textAreaContact').val('');
 								$('#topContactSuccess').html('');
+								$('#btnContact').html('Envoyer');
 								$('#modal').modal('toggle');
 							}, 1500);
 						} else {
+							$('#btnContact').html('Envoyer');
 							$('#topContactSuccess').html('');
 							$('#topContactError').html('<p>' + data.error + '</p>');
 						}

@@ -45,7 +45,7 @@ app.post('/mailer', (req, res) => {
 		ipAddress[ip] = setTimeout(() => { ipAddress[ip] = null; }, 120 * 1000 * 60);
 		const mailOptions = {
 		  from: req.body.email,
-		  to: 'jmisiti42@gmail.com', //contact@hellomarcel.fr
+		  to: 'contact@hellomarcel.fr',
 		  subject: 'Email venant de ' + req.body.email,
 		  text: req.body.message
 		};

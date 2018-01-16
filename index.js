@@ -11,6 +11,15 @@ const validateEmail			= (email) => {
 	const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
 }
+const nodemailer = require('nodemailer');
+const ipAddress = new Array();
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'hellomarcel.contact@gmail.com',
+    pass: 'Hellom@rcel1'
+  }
+});
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
@@ -28,7 +37,29 @@ app.get('/', (req, res) => {
 	res.render('index', { msg });
 });
 
-app.post('/signup', function (req, res) {
+app.post('/mailer', (req, res) => {
+	const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+	if (ipAddress[ip])
+		res.json({ error: "Veuillez attendre avant d'envoyer un nouveau message." });
+	else {
+		ipAddress[ip] = setTimeout(() => { ipAddress[ip] = null; }, 120 * 1000 * 60);
+		const mailOptions = {
+		  from: req.body.email,
+		  to: 'jmisiti42@gmail.com', //contact@hellomarcel.fr
+		  subject: 'Email venant de ' + req.body.email,
+		  text: req.body.message
+		};
+		transporter.sendMail(mailOptions, function(error, info){
+			if (error) {
+				res.json({ error: 'Une erreur est survenue lors de l\'envoi de votre mail. Veuillez essayer à nouveau dans quelques minutes.' });
+			} else {
+				res.json({ status: 'OK' });
+			}
+		});
+	}
+});
+
+app.post('/signup', (req, res) => {
 	if (!req.body || !req.body.email || !validateEmail(req.body.email))
 		res.json({ status: 'ERROR', msg: 'Veuillez renseigner une addresse email valide.' });
 	const email = req.body.email;

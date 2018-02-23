@@ -11,8 +11,9 @@ const mongoose				= require('mongoose');
 const nodemailer			= require('nodemailer');
 const mailchimp 			= new Mailchimp(mailchimpApiKey);
 const ipAddress 			= new Array();
-require("./models/User");
-const User = mongoose.model('User');
+const urlTested 			= new Array();
+require("./models/url");
+const Url = mongoose.model('url');
 const db = mongoose.connection;
 var isInitialized = false;
 

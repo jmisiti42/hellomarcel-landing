@@ -24,6 +24,7 @@
     "express": "^4.16.2",
     "helmet": "^3.9.0",
     "mailchimp-api-v3": "^1.8.0",
+    "mongoose": "^5.0.6",
     "nodemailer": "^4.4.1",
     "path": "^0.12.7",
     "request": "^2.83.0",

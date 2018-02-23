@@ -1,0 +1,14 @@
+{
+	"gmail": {
+		"user": "hellomarcel.contact@gmail.com",
+		"pass": "Hellom@rcel1"
+	},
+	"db": {
+		"uri": "mongodb://marcel:coucouhello92@ec2-52-28-188-179.eu-central-1.compute.amazonaws.com:27017/marcel"
+	},
+	"mailchimp": {
+		"instance": "us16",
+		"luid": "f1b321ee6e",
+		"key": "fc9db4d21bab5a8d956069a08d730255-us16"
+	}
+}

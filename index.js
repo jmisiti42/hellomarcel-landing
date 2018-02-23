@@ -1,24 +1,34 @@
+const config				= require('./config/config.json');
 const express				= require('express');
 const bodyParser			= require('body-parser');
 const http					= require('http');
-const mailchimpInstance		= 'us16';
-const listUniqueId			= 'f1b321ee6e';
-const mailchimpApiKey		= 'fc9db4d21bab5a8d956069a08d730255-us16';
+const mailchimpInstance		= config.mailchimp.instance;
+const listUniqueId			= config.mailchimp.luid;
+const mailchimpApiKey		= config.mailchimp.key;
 const Mailchimp 			= require('mailchimp-api-v3');
-const mailchimp 			= new Mailchimp(mailchimpApiKey);
 const app					= express();
-const validateEmail			= (email) => {
-	const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	return re.test(email);
-}
-const nodemailer = require('nodemailer');
-const ipAddress = new Array();
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'hellomarcel.contact@gmail.com',
-    pass: 'Hellom@rcel1'
-  }
+const mongoose				= require('mongoose');
+const nodemailer			= require('nodemailer');
+const mailchimp 			= new Mailchimp(mailchimpApiKey);
+const ipAddress 			= new Array();
+require("./models/User");
+const User = mongoose.model('User');
+const db = mongoose.connection;
+var isInitialized = false;
+
+console.log(`Connecting to Mongoose default database ${config.db.uri}`);
+mongoose.connect(config.db.uri);
+
+// CONNECTION EVENTS
+// If the connection throws an error
+db.on('error', err => {
+    console.log('Mongoose default connection error:', err);
+    db.close();
+});
+
+// When successfully opened
+db.once('open', () => {
+    console.log(`Mongoose default connection open to ${config.db.uri}`);
 });
 
 app.use(express.static('public'));
@@ -29,6 +39,13 @@ app.use(require('helmet')());
 app.set('view engine', 'ejs');
 app.disable('x-powered-by');
 app.enable('trust proxy');
+
+app.get('/:name', (req, res) => {
+	User.count({}, (err, count) => {
+		console.log(err, count);
+		res.send(""+count);
+	});
+});
 
 app.get('/', (req, res) => {
 	var msg = "Venez discuter !"
@@ -84,3 +101,18 @@ app.post('/signup', (req, res) => {
 });
 
 http.createServer(app).listen(5001, () => console.log(`listening on port 5001`));
+
+
+//Utilities
+const validateEmail			= (email) => {
+	const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+}
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: config.gmail.user,
+    pass: config.gmail.pass
+  }
+});

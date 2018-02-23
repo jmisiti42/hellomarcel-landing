@@ -4,7 +4,7 @@
 		"pass": "Hellom@rcel1"
 	},
 	"db": {
-		"uri": "mongodb://marcel:coucouhello92@ec2-52-28-188-179.eu-central-1.compute.amazonaws.com:27017/marcel"
+		"uri": "mongodb://localhost/marcel"
 	},
 	"mailchimp": {
 		"instance": "us16",

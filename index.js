@@ -42,10 +42,7 @@ app.disable('x-powered-by');
 app.enable('trust proxy');
 
 app.get('/:name', (req, res) => {
-	User.count({}, (err, count) => {
-		console.log(err, count);
-		res.send(""+count);
-	});
+	res.send(""+ req.header('Referer'));
 });
 
 app.get('/', (req, res) => {

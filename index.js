@@ -13,7 +13,7 @@ const mailchimp 			= new Mailchimp(mailchimpApiKey);
 const ipAddress 			= new Array();
 const urlTested 			= new Array();
 require("./models/url");
-const Url = mongoose.model('url');
+const Url = mongoose.model('Url');
 const db = mongoose.connection;
 var isInitialized = false;
 

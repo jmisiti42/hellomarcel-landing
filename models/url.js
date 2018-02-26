@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 var UrlSchema = new mongoose.Schema({
 	url: {type: String, required: true},
-	count: {type: String, required: true},
-    childs: [Number]
+	name: {type: String, required: true}
 });
 
 const hash = (pwd) => {

@@ -6,10 +6,4 @@ var SavedUrlSchema = new mongoose.Schema({
 	timestamp: { type: Date, default: Date.now }
 });
 
-SavedUrlSchema.create = (datas) => {
-	this.name = datas.name;
-	this.from = datas.from ? datas.from : "other";
-	return this;
-};
-
 module.exports = mongoose.model('SavedUrl', SavedUrlSchema);

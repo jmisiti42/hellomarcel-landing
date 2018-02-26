@@ -48,7 +48,7 @@ app.get('/:name', (req, res) => {
 	Url.findOne({ name: req.params.name }).exec((error, url) => {
 		if (error) res.send(error);
 		if (url) {
-			let surl = new SavedUrl({ from: reff, name: url.name });
+			let surl = new SavedUrl({ from: reff ? reff : "Autre", name: url.name });
 			surl.save((error, savedurl) => {
 				console.log("redirecting to : ", url.url);
 				if (error) res.send(error);

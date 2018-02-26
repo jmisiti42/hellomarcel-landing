@@ -12,7 +12,9 @@ const nodemailer			= require('nodemailer');
 const mailchimp 			= new Mailchimp(mailchimpApiKey);
 const ipAddress 			= new Array();
 const urlTested 			= new Array();
-require("./models/url");
+require("./models/savedUrl.js");
+require("./models/url.js");
+const SavedUrl = mongoose.model('SavedUrl');
 const Url = mongoose.model('Url');
 const db = mongoose.connection;
 var isInitialized = false;
@@ -42,8 +44,22 @@ app.disable('x-powered-by');
 app.enable('trust proxy');
 
 app.get('/:name', (req, res) => {
-	if (req && req.headers && req.headers.referer)
-		res.send(extractRootDomain(req.headers.referer));
+	if (req && req.headers && req.headers.referer) {
+		Url.findOne({ name: req.params.name }).exec((error, url) => {
+			if (error) res.send(error);
+			console.log(url);
+			if (url) {
+				let surl = new SavedUrl({ from: extractRootDomain(req.headers.referer), name: url.name });
+				surl.save((error, savedurl) => {
+					console.log("redirecting to : ", url.url);
+					if (error) res.send(error);
+					else res.redirect(url.url);
+				});
+			} else {
+				res.send('oops');
+			}
+		});
+	}
 	else
 		res.send('oops');
 });

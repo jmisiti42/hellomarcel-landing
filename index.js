@@ -47,7 +47,6 @@ app.get('/:name', (req, res) => {
 	if (req && req.headers && req.headers.referer) {
 		Url.findOne({ name: req.params.name }).exec((error, url) => {
 			if (error) res.send(error);
-			console.log(url);
 			if (url) {
 				let surl = new SavedUrl({ from: extractRootDomain(req.headers.referer), name: url.name });
 				surl.save((error, savedurl) => {

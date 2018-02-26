@@ -46,7 +46,6 @@ app.enable('trust proxy');
 app.get('/:name', (req, res) => {
 	const reff = req.headers.referer ? extractRootDomain(req.headers.referer) : null;
 	Url.findOne({ name: req.params.name }).exec((error, url) => {
-		console.log(url);
 		if (error) res.send(error);
 		if (url) {
 			let surl = new SavedUrl({ from: reff, name: url.name });

@@ -44,23 +44,21 @@ app.disable('x-powered-by');
 app.enable('trust proxy');
 
 app.get('/:name', (req, res) => {
-	if (req && req.headers && req.headers.referer) {
-		Url.findOne({ name: req.params.name }).exec((error, url) => {
-			if (error) res.send(error);
-			if (url) {
-				let surl = new SavedUrl({ from: extractRootDomain(req.headers.referer), name: url.name });
-				surl.save((error, savedurl) => {
-					console.log("redirecting to : ", url.url);
-					if (error) res.send(error);
-					else res.redirect(url.url);
-				});
-			} else {
-				res.send('oops');
-			}
-		});
-	}
-	else
-		res.send('oops');
+	const reff = req.headers.referer ? extractRootDomain(req.headers.referer) : null;
+	Url.findOne({ name: req.params.name }).exec((error, url) => {
+		console.log(url);
+		if (error) res.send(error);
+		if (url) {
+			let surl = new SavedUrl({ from: reff, name: url.name });
+			surl.save((error, savedurl) => {
+				console.log("redirecting to : ", url.url);
+				if (error) res.send(error);
+				else res.redirect(url.url);
+			});
+		} else {
+			res.send('oops');
+		}
+	});
 });
 
 app.get('/', (req, res) => {

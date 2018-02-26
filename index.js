@@ -44,6 +44,7 @@ app.disable('x-powered-by');
 app.enable('trust proxy');
 
 app.get('/:name', (req, res) => {
+	console.log("reff = ", req.headers.referer);
 	const reff = req.headers.referer ? extractRootDomain(req.headers.referer) : null;
 	Url.findOne({ name: req.params.name }).exec((error, url) => {
 		if (error) res.send(error);

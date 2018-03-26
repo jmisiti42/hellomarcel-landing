@@ -43,6 +43,8 @@ app.set('view engine', 'ejs');
 app.disable('x-powered-by');
 app.enable('trust proxy');
 
+app.use('/.well-known', express.static('.well-known'));
+
 app.get('/:name', (req, res) => {
 	console.log("reff = ", req.headers.referer);
 	const reff = req.headers.referer ? extractRootDomain(req.headers.referer) : null;

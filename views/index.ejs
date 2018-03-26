@@ -21,7 +21,6 @@
 		<!-- End Google Tag Manager -->
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="./javascript/jquery.cookie.js"></script>
-		<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us16.list-manage.com","uuid":"704f96eee49b244f3518cd486","lid":"f1b321ee6e"}) })</script>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -166,13 +165,13 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 						</div>
 						<div id="newsletter" class="col-xs-8">
 							<h6 style="text-align: left;">Recevez notre newsletter !</h6>
-							<div class="formnews1 row">
+							<div class="form1 formnews1 row">
 								<div style="padding-right: 0 !important;" class="col-xs-9 col-md-8">
 									<input type="email" name="email" class="mailform1 form-control" placeholder="Adresse Email"/>
 									<input hidden type="text" name="part" class="partform1" value="middle"/>
 								</div>
 								<div style="padding-right: 0 !important;" class="col-xs-9 col-md-4">
-									<button type="submit" class="form1 btn btn-green">S'inscrire</button>
+									<button type="submit" class="btn btn-green">S'inscrire</button>
 								</div>
 								<div class="col-xs-12"><small class="text-danger formsmall"></small></div>
 							</div>
@@ -246,12 +245,12 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 			<div class"row">
 				<div class="col-md-4 footerelem">
 					<h4 class="text-xs-center" style="font-familly: brandon; color: white;">Recevez notre newsletter !</h4><br>
-					<div class="formnews2 row">
+					<div class="form2 formnews2 row">
 						<div class="col-xs-10 col-md-6">
 							<input type="email" name="email" class="mailform2 form-control inputfooter" placeholder="Adresse Email"/>
 						</div>
 						<div class="col-xs-2 col-md-6" style="padding: 0;">
-							<button type="submit" class="form2 btn btn-white">GO</button>
+							<button type="submit" class="btn btn-white">GO</button>
 						</div>
 						<div class="col-xs-12"><small class="text-danger formsmall"></small></div>
 					</div>
@@ -277,7 +276,7 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 							<p class="text-success" id="topContactSuccess"></p>
 						</div>
 						<div class="modal-body">
-							<input type="email" name="email" class="form-control" id="inputContact" placeholder="Votre mail"/>
+							<input type="email" autocomplete='email' name="email" class="form-control" id="inputContact" placeholder="Votre mail"/>
 							<small class="text-danger" id="smallInputContact"></small>
 							<br>
 							<textarea class="form-control" placeholder="Votre message" rows="7" id="textAreaContact"></textarea>
@@ -286,6 +285,40 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 						<div class="modal-footer">
 							<button type="button" id="btnContact" onclick="sendMail();" class="btn btn-default">Envoyer</button>
 							<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="z-index: 90000000000;" class="modal fade" id="modalNl" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Inscrivez-vous à la newsletter Hello Marcel !</h4>
+							<p class="text-muted">Embarquez chaque semaine votre petite tribu avec l'essentiel d'Hello Marcel, chaque vendredi dans votre boîte mail.</p>
+							<p class="text-danger" id="topNlError"></p>
+							<p class="text-success" id="topNlSuccess"></p>
+						</div>
+						<div class="modal-body">
+							<form id="formNl" class="text-center">
+								<input style="width: 200px; margin: auto;" required type="email" autocomplete='email' name="email" id="emailNl" class="form-control" placeholder="Votre adresse mail*"/>
+								<br />
+								<input style="width: 200px; margin: auto;" required type="text" autocomplete='given-name' name="firstname" id="firstnameNl" class="form-control" placeholder="Votre prénom*"/>
+								<br />
+								<input style="width: 200px; margin: auto;" required type="text" autocomplete="postal-code" name="postalCode" id="postalCodeNl" class="form-control" placeholder="75000*" maxlength="5" />
+								<br />
+								<!--<label for="trancheAge">Quelle tranche d'âge vous intéresse le plus pour vos sorties ?</label>
+								<br />
+								<div class="radio-inline"><label><input type="radio" name="trancheAge" value="2">0 - 3</label></div>
+								<div class="radio-inline"><label><input type="radio" name="trancheAge" value="5">4 - 7</label></div>
+								<div class="radio-inline"><label><input type="radio" name="trancheAge" value="10">8 - 12</label></div>
+								<div class="radio-inline"><label><input type="radio" name="trancheAge" value="Tous">Tous âges</label></div>-->
+							</form>
+						</div>
+						<div style="text-align: center;" class="modal-footer">
+							<button form="formNl" style="width: 200px; font-size: 14px;" type="submit" class="btn btn-marcel">S'ABONNER</button>
+							<br />
+							<small class="text-muted">Rassurez-vous, vos informations sont confidentielles et ne sont pas utilisées à des fins commerciales.</small>
 						</div>
 					</div>
 				</div>
@@ -346,6 +379,8 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 				$.cookie('subscribed', 'true', { expires: 31 });
 				$('.formnews1').html('<div class="col-xs-12 text-xs-center"><span style="font-size: 14px; color: black;">' + msg + '</span></div>');
 				$('.formnews2').html('<div class="col-xs-12 text-xs-center"><span style="font-size: 14px; color: white;">' + msg + '</span></div>');
+				$('.form1').removeClass('form1');
+				$('.form2').removeClass('form2');
 			};
 
 			const throwError = (msg) => {
@@ -364,6 +399,11 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 
 				if ($.cookie('subscribed') == 'true') {
 					validateForm('Vous êtes déjà inscrit à notre newsletter.');
+				} else {
+					setTimeout(function () {
+						if (!($("#modalNl").data('bs.modal') || {}).isShown)
+							$('#modalNl').modal('toggle');
+				    }, 5000);
 				}
 
 				//function to scroll to the position and disable anchor system
@@ -381,38 +421,25 @@ Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposan
 					}
 				});
 
-				$('.form2').click(() => {
-					$('.form2').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
-					if (validateEmail($('.mailform2')[0].value)) {
-						$.post("/signup", { email: $('.mailform2')[0].value, part: 'footer' }, (data) => {
-							if (data.status == 'OK') {
-								validateForm('Votre inscription a été validée avec succès !');
-							} else {
-								$('.form2').html('GO');
-								throwError(data.msg);
-							}
-						});
-					} else {
-						throwError('Veuillez renseigner une addresse email valide.');
-						$('.form2').html('GO');
-					}
+				$('.btn-marcel').click((ev) => {
+					ev.preventDefault();
+					let mail = $('#emailNl').val();
+					let firstname = $('#firstnameNl').val();
+					let cp = $('#postalCodeNl').val();
+					$.post('/addToList', { mail, firstname, cp }, (data) => {
+						$('#topNlError').html('');
+						$('#topNlSuccess').html('');
+						if (data.status == "ERROR") {
+							$('#topNlError').html(data.msg);
+						} else {
+							validateForm("Vous êtes déjà inscrit à notre newsletter.");
+							$('#topNlSuccess').html(`Merci ${firstname}, vous recevrez très prochainement votre dose d’inspi 😉`);
+						}
+					});
 				});
 
-				$('.form1').click(() => {
-					$('.form1').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
-					if (validateEmail($('.mailform1')[0].value)) {
-						$.post("/signup", { email: $('.mailform1')[0].value, part: 'middle' }, (data) => {
-							if (data.status == 'OK') {
-								validateForm('Votre inscription a été validée avec succès !');
-							} else {
-								$('.form1').html('S\'abonner maintenant');
-								throwError(data.msg);
-							}
-						});
-					} else {
-						$('.form1').html('S\'abonner maintenant');
-						throwError('Veuillez renseigner une addresse email valide.');
-					}
+				$('.form1, .form2').click(() => {
+					$('#modalNl').modal('toggle');
 				});
 
 				if($(window).scrollTop() + $(window).height() == $(document).height()) {

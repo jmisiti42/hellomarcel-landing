@@ -13,6 +13,15 @@
 	src: url('./AvenirLTStd-Heavy.woff');
 }
 
+.redStar {
+	color: #F2496A;
+}
+
+.btn-marcel {
+	color: white;
+	background-color: #45DD90;
+}
+
 .iframevd video {
     box-sizing: border-box;
     background: url('../images/empty_iphone.png') center center no-repeat;
@@ -24,6 +33,10 @@
 	margin-bottom: -5px;
 	z-index: 0;
 	position: relative;
+}
+
+#modalNl label {
+	font-size: 16px;
 }
 
 .iframevd2 video {

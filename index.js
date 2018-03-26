@@ -43,8 +43,6 @@ app.set('view engine', 'ejs');
 app.disable('x-powered-by');
 app.enable('trust proxy');
 
-app.use('/.well-known', express.static('.well-known'));
-
 app.get('/:name', (req, res) => {
 	console.log("reff = ", req.headers.referer);
 	const reff = req.headers.referer ? extractRootDomain(req.headers.referer) : null;
@@ -92,20 +90,29 @@ app.post('/mailer', (req, res) => {
 	}
 });
 
-app.post('/signup', (req, res) => {
-	if (!req.body || !req.body.email || !validateEmail(req.body.email))
-		res.json({ status: 'ERROR', msg: 'Veuillez renseigner une addresse email valide.' });
-	const email = req.body.email;
+app.post('/addToList', (req, res) => {
+	if (!req.body || !req.body.mail || !validateEmail(req.body.mail))
+		return res.json({ status: 'ERROR', msg: 'Veuillez renseigner une addresse email valide.' });
+	if (!req.body.firstname)
+		return res.json({ status: 'ERROR', msg: 'Veuillez renseigner votre prénom.' });
+	if (!req.body.cp)
+		return res.json({ status: 'ERROR', msg: 'Veuillez renseigner votre code postal.' });
+	const email = req.body.mail;
+	const firstname = req.body.firstname;
+	const cp = req.body.cp;
 	const part = req.body.part ? req.body.part : 'Inconnu.';
 	mailchimp.post('/lists/' + listUniqueId + '/members', {
 			email_address : email,
 			merge_fields: {
-		        "PART": part
+				"PART": "popup",
+				"FNAME": firstname,
+		        "CP": cp
 		    },
 			status : 'subscribed'
 		}).then(function(results) {
 			res.json({ status: 'OK' });
 		}).catch(function (err) {
+			console.log(err);
 			if (err.title == "Member Exists")
 				res.json({ status: 'ERROR', msg: "Vous êtes déjà inscrit !"});
 			else if (err.title == "Invalid Resource")

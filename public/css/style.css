@@ -98,6 +98,10 @@ html {
 	background-color: rgba(96, 94, 94, 0.1) !important;
 }
 
+.lightgreenbg {
+	background-color: rgb(221, 255, 228) !important;
+}
+
 .hellomarcel {
 	height: 30px;
 	padding-bottom: 4px;
@@ -343,6 +347,12 @@ a:active {
 	padding-top: 30px;
 	padding-bottom: 30px;
     border-bottom-left-radius: 55px;
+}
+
+.vignetteparledenous {
+	padding-top: 30px;
+	padding-bottom: 30px;
+    border-radius: 50px 50px 50px 0px;
 }
 
 .redbg {

@@ -11,6 +11,7 @@ const mongoose				= require('mongoose');
 const nodemailer			= require('nodemailer');
 const mailchimp 			= new Mailchimp(mailchimpApiKey);
 const ipAddress 			= new Array();
+const ipAddressBitly 		= new Array();
 const urlTested 			= new Array();
 require("./models/savedUrl.js");
 require("./models/url.js");
@@ -45,13 +46,20 @@ app.enable('trust proxy');
 
 app.get('/:name', (req, res) => {
 	const reff = req.headers.referer ? extractRootDomain(req.headers.referer) : null;
+	const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 	Url.findOne({ name: req.params.name }).exec((error, url) => {
 		if (error) res.send(error);
-		if (url) {
+		else if (url) {
+			if (!ipAddressBitly[url.name]) { ipAddressBitly[url.name] = new Array(); }
+			if (ipAddressBitly[url.name][ip])
+				return res.redirect(url.url);
 			let surl = new SavedUrl({ from: reff ? reff : "Autre", name: url.name });
 			surl.save((error, savedurl) => {
-				if (error) res.send(error);
-				else res.redirect(url.url);
+				if (error) { res.send(error); }
+				else {
+					ipAddressBitly[url.name][ip] = setTimeout(() => { ipAddressBitly[url.name][ip] = null; }, 120 * 1000 * 60);
+					res.redirect(url.url);
+				}
 			});
 		} else {
 			res.send('Url invalide.');

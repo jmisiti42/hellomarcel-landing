@@ -44,6 +44,10 @@ app.set('view engine', 'ejs');
 app.disable('x-powered-by');
 app.enable('trust proxy');
 
+app.get('/cgu', (req, res) => {
+	res.render('cgu');
+});
+
 app.get('/:name', (req, res) => {
 	const reff = req.headers.referer ? extractRootDomain(req.headers.referer) : null;
 	const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;

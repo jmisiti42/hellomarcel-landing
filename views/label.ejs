@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101924436-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-101924436-2');
+		</script>
+		<!-- Google Tag Manager -->
+		<script>
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-P8RQHQP');
+		</script>
+		<!-- End Google Tag Manager -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="./javascript/jquery.cookie.js"></script>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/fontawesome/web-fonts-with-css/css/fontawesome.min.css">
+		<!-- Script customer chat à laisser en haut du fichier ! -->
+		<meta name="description" content="Marcel est un assistant personnel connecté qui facilite la vie des parents en répondant à leurs questions et tâches du quotidien, via Messenger" />
+		<meta name="keywords" content="Hello, Marcel, hello marcel, hellomarcel, HM, chatbot, chat bot, enfants, aide, activités, parents, bot, assistant" />
+		<title>Hello Marcel</title>
+		<!-- Google Analytics -->
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-101924436-2', 'auto');
+		ga('send', 'pageview');
+		</script>
+		<!-- End Google Analytics -->
+  	</head>
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8RQHQP"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<div hidden class="accroche"><img alt="hellomarcel" class="hellomarcel" src="./images/hm.png"/><span class="msgaccroche"><img alt="fb loading" style="height: 25px; margin: 0 20px 4px 20px;" src="./images/fbloading.gif"/></span></div>
+		<!-- div customer chat -->
+		<!-- Richard : 1657821470923577 -->
+		<!-- Marcel: 1884786881751064 -->
+		<div id="bg">
+			<img src="./images/bg1.png" alt="background image">
+		</div>
+
+		<nav class="navbar navbar-default" style="padding: 0; width:100%; background-color: rgba(0, 0, 0, 0.4); z-index: 999;">
+
+			<div class="container-fluid">
+				<div class="row">
+				<div class="text-center col-xs-4 col-md-4" style="margin-bottom: 2%;">
+						<img alt="Title" class="title" src="./images/title.png"/>
+				</div>
+
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header text-right">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand brand" href="#"></a>
+
+					<!--
+					<a class="navbar-brand brand" href="#">Menu</a>
+					-->
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse text-center col-xs-12 nav-div" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav" style="margin-top: 3vw;" class="text-center col-xs-12">
+						<li><a style="padding-right: 30px;" class="navlink" href="#home">Home</a>
+						<li><a style="padding-right: 30px;" class="navlink" href="#whois" >Qui est Marcel ?</a>
+						<li><a style="padding-right: 30px;" class="navlink" href="#newsletter">Newsletter</a>
+						<li><a style="padding-right: 30px;" class="navlink" href="#temoignage">Témoignages</a>
+						<li><a style="padding-right: 30px;" target="_blank" class="navlink" href="https://medium.com/@Hello_Marcel">Blog</a>
+						<li><a data-toggle="modal" data-target="#modal" class="navlink" href="#">Contact</a>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+				</div>
+			</div><!-- /.container-fluid -->
+		</nav>
+
+
+		<!--
+		a enlever
+		<nav>
+		<div id="header" class="container container-fluid" style="padding: 0; width:100%; background-color: rgba(0, 0, 0, 0.4); z-index: 999;">
+			<div class="navbar-header text-center">
+				<a href="#" class="navbar-brand">Menu</a>
+			</div>
+			<div class="nav navbar-nav "">
+				<a style="padding-right: 30px;" class="navlink" href="#home">Home</a>
+				<a style="padding-right: 30px;" class="navlink" href="#whois" >Qui est Marcel ?</a>
+				<a style="padding-right: 30px;" class="navlink" href="#newsletter">Newsletter</a>
+				<a style="padding-right: 30px;" class="navlink" href="#temoignage">Témoignages</a>
+				<a style="padding-right: 30px;" target="_blank" class="navlink" href="https://medium.com/@Hello_Marcel">Blog</a>
+				<a data-toggle="modal" data-target="#modal" class="navlink" href="#">Contact</a>
+			</div>
+		</nav>
+		-->
+
+<!--
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+				<a class="navbar-brand" href="#">WebSiteName</a>
+				</div>
+				<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Page 1</a></li>
+				<li><a href="#">Page 2</a></li>
+				<li><a href="#">Page 3</a></li>
+				</ul>
+			</div>
+		</nav>
+		-->
+		<!--
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="text-center col-xs-12 col-md-6">
+							<img alt="Title" class="title" src="./images/title.png"/>
+						</div>
+						<div style="margin-top: 3vw;" class="text-center col-xs-12 col-md-6">
+							<a style="padding-right: 30px;" class="navlink" href="#home">Home</a>
+							<a style="padding-right: 30px;" class="navlink" href="#whois" >Qui est Marcel ?</a>
+							<a style="padding-right: 30px;" class="navlink" href="#newsletter">Newsletter</a>
+							<a style="padding-right: 30px;" class="navlink" href="#temoignage">Témoignages</a>
+							<a style="padding-right: 30px;" target="_blank" class="navlink" href="https://medium.com/@Hello_Marcel">Blog</a>
+							<a data-toggle="modal" data-target="#modal" class="navlink" href="#">Contact</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</nav>
+		-->
+
+
+		<div id="home">
+			<div style="margin-right: 0px;" class="row">
+				<div class="col-md-6 text-center">
+					<div class="row text-center" style="padding-top: 28px;">
+						<div class="col-xs-12 iframevd"><video playsinline muted autoplay loop id="v1"><source src="./videos/video1.mp4" type="video/mp4"/></video></div>
+					</div>
+				</div>
+				<div style="margin-left: -100px;" class="hidden-sm hidden-xs col-md-5">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h2 style="margin-top: 124px; font-family: brandon; height: 100px; font-size: 50px;" class="white">le coach des parents sur Messenger</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="home2"></div>
+		<div id="whois" class="whitebg container-fluid">
+			<br />
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-3 text-xs-center">
+					<img alt="laureat px pub" style="width: 190px; height: 102px; object-fit: cover;" src="./images/laureatPxPub.png"/>
+				</div>
+				<div class="col-md-6 text-xs-center">
+					<h1 class="green" style="font-family: avenirl;"><strong>Hello Marcel</strong></h1>
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-md-2"></div>
+				<div class="col-md-9">
+					<h2><strong>Le 1er chatbot qui souffle à l'oreille des parents !</strong></h2>
+					<span class="vignettes">Parce qu'être parent n'est pas toujours simple, parce qu'on manque de temps, d'idées, parce qu'on a besoin<br>d'échanges et de réponses, nous avons imaginé Hello Marcel.<br>Hello Marcel est le 1er agent conversationnel qui facilite la vie des parents en répondant à leurs<br>
+					questions et tâches du quotidien via Facebook Messenger.</span>
+				</div>
+			</div>
+			<br>
+			<br>
+			<div class="row text-center">
+				<div class="col-md-4">
+					<i class="fa-whois green fa fa-rocket" aria-hidden="true"></i>
+					<h4>Activités</h4>
+					<span class="vignettes">Ciné, spectacles, balades, visites, restos... vous cherchez la bonne idée pour passer un bon moment en famille ?
+	Hello Marcel déniche les meilleurs plans du moment !</span>
+				</div>
+				<div class="borders col-md-4">
+					<i class="fa-whois green fa fa-gift" aria-hidden="true"></i>
+					<h4>Idées cadeaux / Equipements</h4>
+					<span class="vignettes">Pour trouver le cadeau qui fera mouche ou les dernières innovations en matière de jeux, jouets ou équipement, interrogez Hello Marcel, vous ne serez pas déçu !<br><br></span>
+				</div>
+				<div class="col-md-4">
+					<i class="fa-whois green fa fa-comment" aria-hidden="true"></i>
+					<h4>Conseil en parentalité</h4>
+					<span class="vignettes">S'occuper de ses enfants, les comprendre, les guider, les divertir est un challenge de tous les jours !
+Hello Marcel vous accompagne au quotidien dans cette démarche, en vous proposant des outils, des contenus et un suivi personnalisé.</span>
+				</div>
+			</div>
+		</div>
+		<div id="whois2"></div>
+		<div class="whitebg container-fluid">
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="greybg col-md-12" style="margin-bottom: 0;">
+					<div class="row text-center">
+						<div class="col-xs-4 col-md-3" style="padding: 0;">
+							<img alt="hellomarcel with glasses" src="./images/hm_glasses.png" style="margin-top: 51px; max-width: 71px; object-fit: cover;"/>
+						</div>
+						<div id="newsletter" class="col-xs-8">
+							<h6 style="text-align: left;">Recevez notre newsletter !</h6>
+							<div class="form1 formnews1 row">
+								<div style="padding-right: 0 !important;" class="col-xs-9 col-md-8">
+									<input type="email" name="email" class="mailform1 form-control" placeholder="Adresse Email"/>
+									<input hidden type="text" name="part" class="partform1" value="middle"/>
+								</div>
+								<div style="padding-right: 0 !important;" class="col-xs-9 col-md-4">
+									<button type="submit" class="btn btn-green">S'inscrire</button>
+								</div>
+								<div class="col-xs-12"><small class="text-danger formsmall"></small></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="whitebg container-fluid">
+			<div class="row lightgreybg">
+				<div class="col-md-6">
+					<div class="row text-center">
+						<div class="col-xs-12 iframevd2"><video playsinline muted autoplay loop id="v2"><source src="./videos/video2.mp4" type="video/mp4"/></video></div>
+					</div>
+				</div>
+				<div class="col-md-6 redbg text-center">
+					<h1 class="white h1white">Hello Marcel<br>Nouvelle Version</h1>
+					<h2 class="white h2white">Le 1er chatbot de recommandation d'idées de sorties, de cadeaux et restos kids friendly sur Facebook Messenger</h2><br><br>
+					<span class="white">"Qu'est-ce qu'on fait ce week-end ?" "Quel cadeau lui offrir ?" "Un petit brunch dimanche ? "...</span>
+					<br><br>
+					<span class="white">Ne cherchez plus, Hello Marcel le fait pour vous ! Il vous propose via une petite conversation une sélection personnalisée de bons plans qui répondra à vos envies ! </span>
+					<br><br>
+					<span class="white">Pour discuter avec <a class="btnlink" target="_blank" href="https://www.messenger.com/t/hellohellomarcel">Hello Marcel</a>, c'est sur <a class="btnlink" href="https://www.messenger.com/t/hellohellomarcel" target="_blank">Facebook Messenger</a></span>
+				</div>
+			</div>
+		</div>
+
+		<div id="newsletter2"></div>
+		<div id="parledenous" style="padding-bottom: 30px; background-color: #f9f9f9;" class="whitebg container-fluid">
+			<div class="row text-center">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<h1 class="dark-grey">On parle de nous !</h1>
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-md-2"></div>
+				<div>
+					<hr class="line-separation"></br>
+				</div>
+			</div>
+
+
+			<div style="display: flex; padding-left: 15%; padding-right: 15%; flex-wrap: wrap; align-items: center;  justify-content: center;">
+				<div class="div-logo-flex">
+					<a href="http://www.elle.fr/Loisirs/Sorties/News/Que-faire-a-Paris-et-aux-alentours-avec-les-enfants-pendant-les-beaux-jours-3681413" target="_blank">
+					<img src="/RP/logos/logoELLE.png" alt="logoElle"  class="logo medium">
+					</a>
+				</div>
+				<div class="div-logo-flex" style= "align-items: center;">
+					<a href="https://vimeo.com/275229255" target="_blank">
+					<img src="/RP/logos/franceinfo.png" alt="logoFranceInfo"  class="logo">
+					</a>
+				</div>
+				<div class="div-logo-flex">
+					<a href="http://www.doolittle.fr/hello-marcel/" target="_blank">
+					<img src="/RP/logos/doolittle.png" alt="logoDoolittle"  class="logo medium">
+					</a>
+				</div>
+				<div class="div-logo-flex">
+					<a href="/RP/articles/RP_HM_Neuillyjournal_juin18.png" target="_blank">
+					<img src="/RP/logos/neuilly-journal.png" alt="logoJournalNeuilly" class="logo medium">
+					</a>
+				</div>
+				<div class="div-logo-flex">
+					<a href="/RP/articles/article_marieclaire.jpg" target="_blank">
+					<img src="/RP/logos/marieclaire.png" alt="logoMarie-ClaireEnfant" class="logo">
+					</a>
+				</div>
+				<div class="div-logo-flex">
+					<a href="/RP/articles/RP_HM_Infrarouge_mars18.png" target="_blank">
+					<img src="/RP/logos/infrarouge.png" alt="logoInfrarouge" class="logo">
+					</a>
+				</div>
+				<div class="div-logo-flex">
+					<a href="/RP/articles/RP_HM_RefletsMagazineEssec.pdf" target="_blank">
+					<img src="/RP/logos/refletsEssec.png" alt="logoRefletsMag" class="logo">
+					</a>
+				</div>
+				<div class="div-logo-flex">
+					<a href="/RP/articles/RP_HM_ArticleHM_Telerama_juin2017.jpg" target="_blank">
+					<img src="/RP/logos/telerama.png" alt="logoTelerama" class="logo medium">
+					</a>
+				</div>
+				<div class="div-logo-flex">
+					<a href="/RP/articles/RP_HM_LADN_Fev18.png" target="_blank">
+						<img src="/RP/logos/adn.png" alt="LADN" class="logo">
+					</a>
+				</div>
+				<div class="div-logo-flex">
+					<a href="https://vimeo.com/275230504" target="_blank">
+					<img src="/RP/logos/reportersdunet.png" alt="lesReportersDuNet" class="logo">
+					</a>
+				</div>
+				<div class="div-logo-flex">
+					<a href="/RP/articles/RP_HM_RECAST.pdf" target="_blank">
+					<img src="/RP/logos/recast-ai-logo.png" alt="recast" class="logo">
+					</a>
+				</div>
+				<div class="div-logo-flex">
+					<a href="https://vimeo.com/275229871" target="_blank">
+					<img src="/RP/logos/m6black.png" alt="M6" class="logo">
+					</a>
+				</div>
+				<div class="div-logo-flex">
+					<a href="https://vimeo.com/275230704" target="_blank">
+					<img src="/RP/logos/groupeBPCE.png" alt="groupeBPCE" class="logo">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="temoignage" style="padding-bottom: 30px;" class="whitebg container-fluid">
+			<div class="row text-center">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<h1 class="dark-grey">Ils l'ont testé !</h1>
+				</div>
+			</div>
+			<div class="row text-center">
+			<div class="col-md-2"></div>
+				<div>
+					<hr class="line-separation"></br>
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<h2><b>Les premiers utilisateurs de Hello Marcel témoignent...</b></h2>
+				</div>
+			</div>
+			<div class="row-table row text-center">
+				<div style="margin-left: 5%; height: 0px;" class="col-md-1"></div>
+				<div class="collumn col-md-3">
+					<div class="avis greybg">
+						<i class="fa fa-quote-left" aria-hidden="true"></i><br>
+						<span class="temoigns">“Je recherchais un cadeau original et pas trop cher pour la maîtresse de ma fille, Hello Marcel m'a fait une petite sélection très sympa ! Et hop, en un clic, c'était réglé !”</span><br>
+					</div>
+					<div style='clear:both;'><!--clear--></div>
+					<div><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><br><span class="temoignagespan">Aurore, maman de Clara 7 ans</span></div>
+				</div>
+
+				<div class="collumn col-md-3">
+					<div class="avis greybg">
+						<i class="fa fa-quote-left" aria-hidden="true"></i><br>
+						<span class="temoigns">“Vendredi soir, rentrés du boulot, nous n'avions aucune idée d'activités pour ce week-end ! Une petite conversation avec Hello Marcel, et hop, nous avions notre programme !”</span>
+					</div>
+					<div><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><br><span class="temoignagespan">Nicolas, papa de Basile et<br>Chloé, 3 et 5 ans</span></div>
+				</div>
+				<div class="collumn col-md-3">
+					<div class="avis greybg">
+						<i class="fa fa-quote-left" aria-hidden="true"></i><br>
+						<span class="temoigns">”Service super efficace, à chaque fois que j'ai fait appel à lui, Hello Marcel m'a apporté des réponses parfaitement adaptées à mon besoin, et rassurant de l'avoir toujours sous la main !”</span>
+					</div>
+					<div><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><br><span class="temoignagespan">Maxime, papa de Tom 3 ans</span></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="soutien" style="padding-bottom: 30px; background-color: #f9f9f9;" class="whitebg container-fluid">
+			<div class="row text-center">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">
+						<h1 class="dark-grey">Ils nous soutiennent !</h1>
+					</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-md-2"></div>
+				<div>
+					<hr class="line-separation"></br>
+				</div>
+			</div>
+			<div class="row text-center">
+					<div class="col-md-6 col-md-offset-3">
+						<span class="dark-grey">En plus de notre super équipe, nous avons la chance d'être soutenus par des gens formidables !</span><br>
+					</div>
+			</div>
+			<div class="row-table row text-center" style="margin-top: 30px; margin-bottom: 20px;">
+				<div class="col-md-8 col-md-offset-2 col-md-offset-right-2">
+					<div class="row">
+						<div class="div-logo collumn col-xs-2">
+							<img src="/images/station_f.png" alt="stationF" class="logo lighter">
+						</div>
+						<div class="div-logo collumn col-xs-2">
+							<img src="/images/cap_digital.png" alt="capDigital" class="logo">
+						</div>
+						<div class="div-logo collumn col-xs-2">
+							<img src="/images/leParisien-logo.png" alt="leParisien" class="logo">
+						</div>
+						<div class="div-logo collumn col-xs-2">
+							<img src="/RP/logos/groupeBPCE.png" alt="BPCE" class="logo">
+						</div>
+						<div class="div-logo collumn col-xs-2">
+							<img src="/images/Groupe_M6_logo.png" alt="GroupeM6" class="logo">
+						</div>
+						<div class="div-logo collumn col-xs-2">
+							<img src="/images/neuilly_lab.png" alt="neuillyLab" class="logo">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="greenbg container-fluid">
+			<div class"row">
+				<div class="col-md-4 footerelem">
+					<h4 class="text-xs-center" style="font-familly: brandon; color: white;">Recevez notre newsletter !</h4><br>
+					<div class="form2 formnews2 row">
+						<div class="col-xs-10 col-md-6">
+							<input type="email" name="email" class="mailform2 form-control inputfooter" placeholder="Adresse Email"/>
+						</div>
+						<div class="col-xs-2 col-md-6" style="padding: 0;">
+							<button type="submit" class="btn btn-white">GO</button>
+						</div>
+						<div class="col-xs-12"><small class="text-danger formsmall"></small></div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center">
+					<img alt="hellomarcel black" src="./images/hm_black.png" style="width: 95px; margin-top: 61px; object-fit: cover;"/>
+				</div>
+				<div class="col-md-4 footerelem" style="text-align: center;">
+					<h4 style="font-familly: brandon; color: white;">Retrouvez-nous sur les réseaux sociaux !<br><br>
+						<a class="footerlink" target="_blank" href="https://www.facebook.com/hellohellomarcel/"><img alt="facebook logo" style="width: 28px; height: 29px; object-fit: cover;" src="./images/facebook_logo.png"/></a>
+						&nbsp;<a class="footerlink" target="_blank" href="https://www.instagram.com/hello.marcel/"><img alt="facebook logo" style="width: 34px; height: 35px; object-fit: cover;" src="./images/insta_logo.png"/></a>
+					</h4>
+					<span style="font-size: 13px; color: #309964;">&nbsp;&nbsp;&nbsp;<a class="footerlink2" href="mailto:contact@hellomarcel.fr">contact@hellomarcel.fr</a>&nbsp; &nbsp; &nbsp; &nbsp;© Wings 2017<br /><a class="footerlink2" target="_blank" href="/cgu#politiqueconfidentialite">Politique de Confidentialité</a>&nbsp; &nbsp; &nbsp; &nbsp;<a class="footerlink2" target="_blank" href="/cgu#title">CGU</a></span>
+				</div>
+			</div>
+			<div style="z-index: 90000000000;" class="modal fade" id="modal" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Nous contacter</h4>
+							<small class="text-danger" id="topContactError"></small>
+							<p class="text-success" id="topContactSuccess"></p>
+						</div>
+						<div class="modal-body">
+							<input type="email" autocomplete='email' name="email" class="form-control" id="inputContact" placeholder="Votre mail"/>
+							<small class="text-danger" id="smallInputContact"></small>
+							<br>
+							<textarea class="form-control" placeholder="Votre message" rows="7" id="textAreaContact"></textarea>
+							<small class="text-danger" id="smallTextContact"></small>
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="btnContact" onclick="sendMail();" class="btn btn-default">Envoyer</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="z-index: 90000000000;" class="modal fade" id="modalNl" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Inscrivez-vous à la newsletter Hello Marcel !</h4>
+							<p class="text-muted">Embarquez chaque semaine votre petite tribu avec l'essentiel d'Hello Marcel, chaque vendredi dans votre boîte mail.</p>
+							<p class="text-danger" id="topNlError"></p>
+							<p class="text-success" id="topNlSuccess"></p>
+						</div>
+						<div class="modal-body">
+							<form id="formNl" class="text-center">
+								<input style="width: 200px; margin: auto;" required type="email" autocomplete='email' name="email" id="emailNl" class="form-control" placeholder="Votre adresse mail*"/>
+								<br />
+								<input style="width: 200px; margin: auto;" required type="text" autocomplete='given-name' name="firstname" id="firstnameNl" class="form-control" placeholder="Votre prénom*"/>
+								<br />
+								<input style="width: 200px; margin: auto;" required type="text" autocomplete="postal-code" name="postalCode" id="postalCodeNl" class="form-control" placeholder="75000*" maxlength="5" />
+								<br />
+								<input required type="checkbox" name="isOk" id="isOk"/> Je consens à m'abonner à la Newsletter d'Hello Marcel
+								<br />
+							</form>
+						</div>
+						<div style="text-align: center;" class="modal-footer">
+							<button form="formNl" style="width: 200px; font-size: 14px;" type="submit" class="btn btn-marcel">S'ABONNER</button>
+							<br />
+							<small class="text-muted">
+								Nous utilisons vos informations (Prénom et CP) pour personnaliser nos échanges avec vous et les sorties que nous vous proposerons.
+							</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="temoignage2"></div>
+		</div>
+
+		<!-- Scripts JS -->
+		<script src="https://use.fontawesome.com/ffb5c24dc5.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- FACEBOOK MESSENGER CHAT BOX -->
+		<script>
+			//refer here all parts of the pages so navbar will be updated
+			const parts = new Array('newsletter', 'home', 'whois', 'temoignage');
+
+			const sendMail = () => {
+				let ok = 0;
+				if (validateEmail($('#inputContact').val()) && ++ok) { $('#smallInputContact').html('<p></p>'); }
+				else { $('#smallInputContact').html('<p style="margin-top: 10px;">Veuillez entrer une address email valide.</p>'); }
+				if ($('#textAreaContact').val().length >= 8 && ++ok) { 	$('#smallTextContact').html(''); }
+				else { $('#smallTextContact').html('<p style="margin-top: 10px;">Votre message doit contenir au moins 8 caractères.</p>'); }
+				if (ok >= 2) {
+					$('#btnContact').html('<img alt="fb loading" style="height: 18px;" src="./images/fbloading.gif"/>');
+					$.post("/mailer", { email: $('#inputContact').val(), message: $('#textAreaContact').val() }, (data) => {
+						if (data.status == 'OK') {
+							$('#topContactSuccess').html('Email envoyé avec succès !');
+							$('#topContactError').html('');
+							$('#btnContact').html('Envoyé !');
+							setTimeout(() => {
+								$('#inputContact').val('');
+								$('#textAreaContact').val('');
+								$('#topContactSuccess').html('');
+								$('#btnContact').html('Envoyer');
+								$('#modal').modal('toggle');
+							}, 1500);
+						} else {
+							$('#btnContact').html('Envoyer');
+							$('#topContactSuccess').html('');
+							$('#topContactError').html('<p>' + data.error + '</p>');
+						}
+					});
+				}
+			};
+
+			const validateEmail = (email) => {
+				const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				return re.test(email);
+			};
+
+			const elementScrolled = (elem, elem2) => {
+				var docViewTop = $(window).scrollTop();
+				var elemTop = $(elem).offset().top - ($('#header').height() + 1);
+				var elemBottom = $(elem2).offset().top - ($('#header').height() + 1);
+				return ((docViewTop >= elemTop) && (docViewTop <= elemBottom));
+			};
+
+			const validateForm = (msg) => {
+				$.cookie('subscribed', 'true', { expires: 31 });
+				$('.formnews1').html('<div class="col-xs-12 text-xs-center"><span style="font-size: 14px; color: black;">' + msg + '</span></div>');
+				$('.formnews2').html('<div class="col-xs-12 text-xs-center"><span style="font-size: 14px; color: white;">' + msg + '</span></div>');
+				$('.form1').removeClass('form1');
+				$('.form2').removeClass('form2');
+			};
+
+			const throwError = (msg) => {
+				$('.formsmall').html(msg);
+			};
+
+			$(function() {
+				$('#fb-root').hide();
+				window.scrollTo(0,0);
+				setTimeout(function () {
+					$('.accroche').show();
+					setTimeout(function () {
+						$('.msgaccroche').html('<%= msg %>');
+				    }, 1700);
+			    }, 3000);
+
+				if ($.cookie('subscribed') == 'true') {
+					validateForm('Vous êtes déjà inscrit à notre newsletter.');
+				} else {
+					setTimeout(function () {
+						if (!($("#modalNl").data('bs.modal') || {}).isShown)
+							$('#modalNl').modal('toggle');
+				    }, 5000);
+				}
+
+				//function to scroll to the position and disable anchor system
+				$('a[href*="#"]').not('[href="#0"]').not('[href="#"]').click(function(event) {
+					if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+						event.preventDefault();
+						var target = $(this.hash);
+						target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+						if (target.length) {
+							$('html, body').animate({
+								scrollTop: target.offset().top
+							}, 1000, function() { });
+							return false;
+						}
+					}
+				});
+
+				$('.btn-marcel').click((ev) => {
+					ev.preventDefault();
+					if ($('#isOk').is(':checked')) { $('#smallTextContact').html(''); }
+					else { $('#topNlError').html("Veuillez concentir."); return ; }
+					let mail = $('#emailNl').val();
+					let firstname = $('#firstnameNl').val();
+					let cp = $('#postalCodeNl').val();
+					$.post('/addToList', { mail, firstname, cp }, (data) => {
+						$('#topNlError').html('');
+						$('#topNlSuccess').html('');
+						if (data.status == "ERROR") {
+							$('#topNlError').html(data.msg);
+						} else {
+							validateForm("Vous êtes déjà inscrit à notre newsletter.");
+							$('#topNlSuccess').html(`Merci ${firstname}, vous recevrez très prochainement votre dose d’inspi 😉`);
+						}
+					});
+				});
+
+				$('.form1, .form2').click(() => {
+					$('#modalNl').modal('toggle');
+				});
+
+				if($(window).scrollTop() + $(window).height() == $(document).height()) {
+				   parts.forEach((elem) => {
+					   elem === "temoignage" ? $('a[href*="#' + elem + '"]').addClass("green") : $('a[href*="#' + elem + '"]').removeClass("green");
+				   });
+				} else {
+				   parts.forEach((elem) => {
+					   elementScrolled($('#' + elem), $('#' + elem + '2')) ? $('a[href*="#' + elem + '"]').addClass("green") : $('a[href*="#' + elem + '"]').removeClass("green");
+				   });
+				}
+
+				$(window).scroll(function(){
+				   if($(window).scrollTop() + $(window).height() >= $(document).height() - $('.greenbg').height() + 20) {
+					   $('.accroche').hide(200);
+					   parts.forEach((elem) => {
+						   elem === "temoignage" ? $('a[href*="#' + elem + '"]').addClass("green") : $('a[href*="#' + elem + '"]').removeClass("green");
+					   });
+				   } else {
+					   $('.accroche').show(200);
+					   parts.forEach((elem) => {
+						   elementScrolled($('#' + elem), $('#' + elem + '2')) ? $('a[href*="#' + elem + '"]').addClass("green") : $('a[href*="#' + elem + '"]').removeClass("green");
+					   });
+				   }
+				});
+			});
+		</script> <!-- Script de page -->
+	</body>
+</html>
+
+<!-- Créé par Jérémy Misiti ->

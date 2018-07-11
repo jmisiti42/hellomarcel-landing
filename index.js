@@ -44,6 +44,10 @@ app.set('view engine', 'ejs');
 app.disable('x-powered-by');
 app.enable('trust proxy');
 
+app.get('/label', (req, res) => {
+	res.render('label');
+});
+
 app.get('/cgu', (req, res) => {
 	res.render('cgu');
 });

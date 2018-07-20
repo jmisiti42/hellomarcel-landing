@@ -46,10 +46,33 @@
 		ga('send', 'pageview');
 		</script>
 		<!-- End Google Analytics -->
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId            : '640350796107376',
+		      autoLogAppEvents : true,
+		      xfbml            : true,
+		      version          : 'v3.0'
+		    });
+		  };
+
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "https://connect.facebook.net/fr_FR/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
   	</head>
 	<body>
+		<div hidden class="accroche"><img alt="hellomarcel" class="hellomarcel" src="./images/hm.png"/><span class="msgaccroche"><img alt="fb loading" style="height: 25px; margin: 0 20px 4px 20px;" src="./images/fbloading.gif"/></span></div>
+		<!-- div customer chat -->
+		<div class="fb-customerchat" style="z-index: 90000;" minimized="false" theme_color="#51E99D" ref="GoToStep|items-selection-5b50b2e788f6c16aabdbc102" page_id="1884786881751064"></div>
+		<!-- Richard : 1657821470923577 -->
+		<!-- Marcel: 1884786881751064 -->
 		<div id="bg">
-			<img src="./images/bg1.png" alt="background image">
+			<img src="./images/bglabel.png" alt="background image">
 		</div>
 
 		<nav class="navbar navbar-default" style="padding: 0; width:100%; background-color: rgba(0, 0, 0, 0.4); z-index: 999;">
@@ -87,23 +110,24 @@
 					</div><!-- /.navbar-collapse -->
 				</div>
 			</div><!-- /.container-fluid -->
+			<div id="h2"></div>
 		</nav>
 		<div class="text-center">
 			<img width="200px;" src="./images/mainlabel.png" alt="logo">
 		</div>
 		<div class="text-center">
-			<h3 style="font-family: brandon; font-size: 46px;" class="white">Lance</h3>
-			<h2 style="font-family: brandon; font-size: 50px;" class="white">Le label des restaurants kids-friendly à Paris</h2>
+			<h3 style="font-family: brandon; font-size: 36px;" class="white">Lance</h3>
+			<h2 style="font-family: brandon; font-size: 40px;" class="white">Le label des restaurants kids-friendly à Paris</h2>
 			<br />
 			<br />
-			<h2 style="font-family: brandon; font-size: 50px;" class="green"><b>DES RESTOS EASY<br />QUAND ON A DES PETITS</b></h2>
+			<h2 style="font-family: brandon; font-size: 40px;" class="green"><b>DES RESTOS EASY<br />QUAND ON A DES PETITS</b></h2>
 			<br />
 			<br />
 		</div>
 		<div id="but" class="whitebg container-fluid">
 			<br />
 			<div class="text-center">
-				<h2 style="font-family: brandon; font-size: 50px;"><b>Notre <span class="green" style="font-size: 50px;">but</span> : répondre à vos <span style="font-size: 50px; color: orange;">besoins</span> !</b></h2>
+				<h2 style="font-family: brandon; font-size: 40px;"><b>Notre <span class="green" style="font-size: 40px;">but</span> : répondre à vos <span style="font-size: 40px; color: orange;">besoins</span> !</b></h2>
 			</div>
 			<br>
 			<br>
@@ -112,7 +136,7 @@
 					A Paris, trouver un restaurant où aller en famille, et qui soit agréable pour les petits comme pour les grands peut vite devenir un casse-tête...
 					<br />
 					<br />
-					<b>... nous souhaitons vous aider</b> : rendez-viys à nos restaurants labélisés pour passer un bon moment en famille sans chercher !
+					<b>... nous souhaitons vous aider</b> : rendez-vous à nos restaurants labélisés pour passer un bon moment en famille sans chercher !
 					<br />
 					<br />
 					Nos restaurants labélisés ont tous été <b>testés et approuvés par notre team !</b> 😊
@@ -121,12 +145,13 @@
 				<br />
 			</div>
 		</div>
-		<div style="border-top: 10px dashed white; background-color: #45DD90;"></div>
+		<div id="but2"></div>
+		<div style="padding-top: 200px; background-color: rgba(255, 255, 255, 0.3);"></div>
 		<div id="whatis" class="whitebg container-fluid">
 			<br />
 			<br />
 			<div class="text-center">
-				<h2 style="font-family: brandon; font-size: 50px;"><b>Un restaurant labélisé <span class="green" style="font-size: 50px;"> Hello Marcel</span>, <span style="font-size: 50px; color: orange;">c'est quoi</span> ?</b></h2>
+				<h2 style="font-family: brandon; font-size: 40px;"><b>Un restaurant labélisé <span class="green" style="font-size: 40px;"> Hello Marcel</span>, <span style="font-size: 40px; color: orange;">c'est quoi</span> ?</b></h2>
 			</div>
 			<br />
 			<br />
@@ -173,12 +198,15 @@
 				</div>
 			</div>
 		</div>
-		<div id="map"></div>
+
+		<div id="whatis2"></div>
+		<div id="map" style="height: 100%;"></div>
+		<div id="map2"></div>
 		<div class="whitebg container-fluid">
 			<br />
 			<br />
 			<div class="text-center">
-				<h2 style="font-family: brandon; font-size: 50px;"><b>Un label créé <span style="font-size: 50px; color: orange;">pour vous</span> with 😍</b></h2>
+				<h2 style="font-family: brandon; font-size: 40px;"><b>Un label créé <span style="font-size: 40px; color: orange;">pour vous</span> with 😍</b></h2>
 			</div>
 			<br />
 			<div class="text-center row">
@@ -224,7 +252,7 @@
 				];
 				map = new google.maps.Map(document.getElementById('map'), {
 				  	center: {lat: 48.8581101, lng: 2.3396499},
-				  	zoom: 12.20,
+				  	zoom: 12.50,
     				styles: myStyles,
 					clickableIcons: false,
 					gestureHandling: 'none',

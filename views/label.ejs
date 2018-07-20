@@ -136,13 +136,12 @@
 			<br>
 			<div style="font-size: 20px;" class="text-center">
 				<p>
-					A Paris, trouver un restaurant où aller en famille, et qui soit agréable pour les petits comme pour les grands peut vite devenir un casse-tête...
+					A Paris, trouver un restaurant où aller en famille, et qui soit agréable pour les petits<br/>comme pour les grands peut vite devenir un casse-tête...
+					<br />
+					Maintenant, il y a la <a class="btnlink" target="_blank" href="https://m.me/hellohellomarcel?ref=GoToStep|restaurant-search-teasing">sélection de resto kids-friendly</a> Hello Marcel !<br />Pour les découvrir, rien de plus simple : démarrez la conversation avec Hello Marcel,<br/>il vous dénichera le resto qui correspond à votre profil et à vos envies !
 					<br />
 					<br />
-					<b>... nous souhaitons vous aider</b> : rendez-vous à nos restaurants labéllisés pour passer un bon moment en famille sans chercher !
-					<br />
-					<br />
-					Nos restaurants labéllisés ont tous été <b>testés et approuvés par notre team !</b> 😊
+					Nos <a class="btnlink" target="_blank" href="https://m.me/hellohellomarcel?ref=GoToStep|restaurant-search-teasing">restaurants labellisés</a> ont tous été <b>testés et approuvés par notre team !</b> 😊
 				</p>
 				<br />
 				<br />
@@ -154,7 +153,7 @@
 			<br />
 			<br />
 			<div class="text-center">
-				<h2 style="font-family: brandon; font-size: 40px;"><b>Un restaurant labéllisé <span class="green" style="font-size: 40px;"> Hello Marcel</span>, <span style="font-size: 40px; color: orange;">c'est quoi</span> ?</b></h2>
+				<h2 style="font-family: brandon; font-size: 40px;"><b>Un restaurant labellisé <span class="green" style="font-size: 40px;"> Hello Marcel</span>, <span style="font-size: 40px; color: orange;">c'est quoi</span> ?</b></h2>
 			</div>
 			<br />
 			<br />
@@ -352,10 +351,14 @@
 				return ((docViewTop >= elemTop) && (docViewTop <= elemBottom));
 			};
 
-
 			$(function() {
 				window.scrollTo(0,0);
-
+				setTimeout(function () {
+					$('.accroche').show();
+					setTimeout(function () {
+						$('.msgaccroche').html('On s\'fait un resto ?');
+					}, 1700);
+				}, 3000);
 				//function to scroll to the position and disable anchor system
 				$('a[href*="#"]').not('[href="#0"]').not('[href="#"]').click(function(event) {
 					if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {

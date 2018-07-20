@@ -291,6 +291,13 @@ a:active {
 	color: white;
 }
 
+.footerlink3 {
+	color: white;
+}
+.footerlink3:hover {
+	color: #309964;
+}
+
 .footerlink2 {
 	color: #309964;
 }
@@ -399,13 +406,13 @@ li {
 	list-style: none;
 }
 .logo {
-	opacity: 0.4; 
+	opacity: 0.4;
 	width: 100%;
 	height : auto;
 }
 
 .logo:hover{
-	opacity: 0.6; 
+	opacity: 0.6;
 }
 
 .logo.lighter{
@@ -419,13 +426,13 @@ li {
 }
 
 .logo.medium {
-	opacity: 0.3; 
+	opacity: 0.3;
 	width: 100%;
 	height : auto;
 }
 
 .logo.medium:hover{
-	opacity: 0.5; 
+	opacity: 0.5;
 }
 
 /*
@@ -518,7 +525,7 @@ before
 		.navbar-nav {
 			float: none!important;
 			margin-top: 3vw;
-	  
+
 			/*
 			max-height: 300px;
 			*/

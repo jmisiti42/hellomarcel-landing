@@ -7,7 +7,7 @@ module.exports = {
 		production: {
 		  user: 'ubuntu',
 		  host: '35.158.165.92',
-		  key: 'ssh_keys/hm-server.pem',
+		  key: 'ssh_keys/aws-marcel.pem',
 		  ref: 'origin/master',
 		  repo: 'git@github.com:jmisiti42/hellomarcel-landing.git',
 		  path: '/home/ubuntu/server',

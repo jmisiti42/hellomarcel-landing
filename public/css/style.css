@@ -76,6 +76,10 @@ nav {
 	font-family: brandon !important;
 }
 
+h2 {
+	font-family: brandon !important;
+}
+
 html {
 	font-family: brandon !important;
 }
@@ -638,12 +642,14 @@ before
 
 @media (max-width: 990px) {
 	.text-xs-center { text-align: center; }
-
+	.btn-discuss { position: fixed; z-index: 9999 !important; bottom: 100px;right: 20%; border: none; width: 220px; height: 60px; font-size: 18px; }
 	.fa-whois { font-size: 9vw !important; }
 }
 
 @media (min-width: 990px) {
 	.disabled-xs  { display: none; }
+
+	.btn-discuss { display: none; }
 
 	.temoigns {
 		font-size: 15px;

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<style type="text/css">
+			.logo {
+				text-align: center;
+				background-color: #EBFAF3;
+			}
+
+			.logoImg {
+				vertical-align: middle;
+				width: 162px;
+				height: 69px;
+				border: 0;
+			}
+
+			.text {
+				font-size: 22px;
+			}
+
+			.text-center {
+				text-align: center;
+			}
+		</style>
+		<title>Redirection...</title>
+  	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 logo">
+					<img src="/images/title.png" alt="logoHelloMarcel" class="logoImg" />
+				</div>
+			</div>
+			<br />
+			<br />
+			<br />
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<p class="text-center text">
+						Hello Marcel est l’expert des sorties en famille sur Messenger !
+						</br></br>
+						Pour accéder à toutes ses bonnes adresses, vous allez être redirigé sur Messenger...
+					</p>
+				</div>
+			</div>
+			<br />
+			<br />
+			<br />
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<img alt="fb loading" style="height: 42px;" src="/images/fbloading.gif"/>
+				</div>
+			</div>
+		</div>
+		<!-- Scripts JS -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script>
+		    (function() {
+		      window.onload = setTimeout(function() {
+		        window.location.replace("http://m.me/hellohellomarcel?ref=GoToStep%7C<%= url %>");
+		      },  4500 );
+		    })();
+		</script> <!-- Script de page -->
+	</body>
+</html>
+
+<!-- Créé par Jérémy Misiti ->

@@ -13,6 +13,7 @@ const mailchimp 			= new Mailchimp(mailchimpApiKey);
 const ipAddress 			= new Array();
 const ipAddressBitly 		= new Array();
 const urlTested 			= new Array();
+const ipList				= new Array();
 require("./models/savedUrl.js");
 require("./models/url.js");
 const SavedUrl = mongoose.model('SavedUrl');
@@ -50,6 +51,16 @@ app.get('/label', (req, res) => {
 
 app.get('/cgu', (req, res) => {
 	res.render('cgu');
+});
+
+app.get('/redirect/:url', (req, res) => {
+	const reff = req.headers.referer ? extractRootDomain(req.headers.referer) : null;
+	const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+	if (ipList.indexOf(ip) > 0)
+		return res.redirect(`http://m.me/hellohellomarcel?ref=GoToStep%7C${req.params.url}`);
+	else {
+		return res.render('redirect', {url: req.params.url});
+	}
 });
 
 app.get('/:name', (req, res) => {

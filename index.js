@@ -49,6 +49,10 @@ app.get('/label', (req, res) => {
 	res.render('label');
 });
 
+app.get('/popup', (req, res) => {
+	res.render('index');
+});
+
 app.get('/cgu', (req, res) => {
 	res.render('cgu');
 });

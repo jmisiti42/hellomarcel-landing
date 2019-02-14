@@ -587,6 +587,9 @@
 
 				if ($.cookie('subscribed') == 'true') {
 					validateForm('Vous êtes déjà inscrit à notre newsletter.');
+				} else if (window.location.pathname == "/popup") {
+						if (!($("#modalNl").data('bs.modal') || {}).isShown)
+							$('#modalNl').modal('toggle');
 				} else {
 					setTimeout(function () {
 						if (!($("#modalNl").data('bs.modal') || {}).isShown)

@@ -50,7 +50,10 @@ app.get('/label', (req, res) => {
 });
 
 app.get('/popup', (req, res) => {
-	res.render('index');
+	var msg = "Venez discuter !"
+	if (req.query.msg)
+		msg = req.query.msg;
+	res.render('index', { msg });
 });
 
 app.get('/cgu', (req, res) => {

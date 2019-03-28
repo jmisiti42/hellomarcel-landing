@@ -2,6 +2,7 @@ const config				= require('./config/config.json');
 const express				= require('express');
 const bodyParser			= require('body-parser');
 const http					= require('http');
+const fs					= require('fs');
 const mailchimpInstance		= config.mailchimp.instance;
 const listUniqueId			= config.mailchimp.luid;
 const mailchimpApiKey		= config.mailchimp.key;

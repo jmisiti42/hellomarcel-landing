@@ -60,6 +60,18 @@ app.get('/cgu', (req, res) => {
 	res.render('cgu');
 });
 
+app.get('/guide', (req, res) => {
+	var stream = fs.readStream('./public/guide_label.pdf');
+	var filename = "guide_label.pdf"; 
+  
+	filename = encodeURIComponent(filename);
+  
+	res.setHeader('Content-disposition', 'inline; filename="' + filename + '"');
+	res.setHeader('Content-type', 'application/pdf');
+  
+	stream.pipe(res);
+});
+
 app.get('/redirect/:url', (req, res) => {
 	const reff = req.headers.referer ? extractRootDomain(req.headers.referer) : null;
 	const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;

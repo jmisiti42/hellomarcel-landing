@@ -62,7 +62,7 @@ app.get('/cgu', (req, res) => {
 });
 
 app.get('/guide', (req, res) => {
-	var stream = fs.readStream('./public/guide_label.pdf');
+	var stream = fs.createReadStream('./public/guide_label.pdf');
 	var filename = "guide_label.pdf"; 
   
 	filename = encodeURIComponent(filename);

@@ -10,7 +10,7 @@ module.exports = {
 		  key: '.ssh/aws-marcel.pem',
 		  ref: 'origin/master',
 		  repo: 'git@github.com:jmisiti42/hellomarcel-landing.git',
-		  path: '/home/ubuntu/server',
+		  path: '/home/ubuntu/server/current',
 		  'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
 		}
 	}

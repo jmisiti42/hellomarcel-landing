@@ -11,7 +11,7 @@ module.exports = {
 		  ref: 'origin/master',
 		  repo: 'git@github.com:jmisiti42/hellomarcel-landing.git',
 		  path: '/home/ubuntu/server',
-		  'post-deploy': 'cd current && npm install && pm2 startOrRestart ecosystem.config.js'
+		  'post-deploy': 'cd /home/ubuntu/server/current && npm install && pm2 startOrRestart ecosystem.config.js'
 		}
 	}
 }
